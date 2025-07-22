@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work & Impact - Sri Bharat</title>
+    <meta name="description" content="Track Sri Bharat's parliamentary work, development projects, and community impact">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Chart.js for data visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: 'hsl(35, 91%, 51%)',
+                        'primary-foreground': 'hsl(0, 0%, 100%)',
+                        secondary: 'hsl(45, 100%, 96%)',
+                        'secondary-foreground': 'hsl(25, 47%, 15%)',
+                        background: 'hsl(250, 100%, 99%)',
+                        foreground: 'hsl(25, 47%, 15%)',
+                        card: 'hsl(0, 0%, 100%)',
+                        'card-foreground': 'hsl(25, 47%, 15%)',
+                        muted: 'hsl(45, 100%, 96%)',
+                        'muted-foreground': 'hsl(25, 25%, 45%)',
+                        border: 'hsl(45, 100%, 90%)',
+                    },
+                    backgroundImage: {
+                        'gradient-primary': 'linear-gradient(135deg, hsl(35, 91%, 51%), hsl(45, 100%, 65%))',
+                        'gradient-hero': 'linear-gradient(135deg, hsl(35, 91%, 51%), hsl(45, 100%, 70%))',
+                        'gradient-dark': 'linear-gradient(135deg, hsl(25, 47%, 15%), hsl(35, 47%, 25%))',
+                    },
+                    boxShadow: {
+                        'elegant': '0 10px 30px -10px hsl(35 91% 51% / 0.3)',
+                        'card': '0 4px 20px -4px hsl(35 91% 51% / 0.15)',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-background text-foreground">
+    <!-- Header -->
+    <header class="bg-background shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-gradient-primary rounded-full flex items-center justify-center">
+                        <span class="text-primary-foreground font-bold text-sm">S</span>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-foreground">Sri Bharat</h1>
+                        <p class="text-xs text-muted-foreground">Member of Parliament</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link text-foreground hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg transition-colors duration-200 text-sm font-medium">Home</a>
+                    <a href="about.html" class="nav-link text-foreground hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg transition-colors duration-200 text-sm font-medium">About</a>
+                    <a href="constituency.html" class="nav-link text-foreground hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg transition-colors duration-200 text-sm font-medium">My constituency</a>
+                    <a href="work-impact.html" class="nav-link bg-primary text-primary-foreground px-3 py-2 rounded-lg transition-colors duration-200 text-sm font-medium">Work & Impact</a>
+                    <a href="news.html" class="nav-link text-foreground hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg transition-colors duration-200 text-sm font-medium">News</a>
+                    <a href="media-gallery.html" class="nav-link text-foreground hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg transition-colors duration-200 text-sm font-medium">Media gallery</a>
+                    <a href="connect-engage.html" class="nav-link text-foreground hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg transition-colors duration-200 text-sm font-medium">Connect & Engage</a>
+                    <a href="events.html" class="nav-link text-foreground hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg transition-colors duration-200 text-sm font-medium">Events</a>
+                    <a href="contact.html" class="nav-link text-foreground hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg transition-colors duration-200 text-sm font-medium">Contact</a>
+                </nav>
+
+                <!-- Desktop Contact Button -->
+                <div class="hidden md:block">
+                    <button class="bg-gradient-primary hover:opacity-90 text-primary-foreground px-6 py-2 rounded-lg font-medium transition-opacity">
+                        Contact Us
+                    </button>
+                </div>
+
+                <!-- Mobile menu button -->
+                <button class="md:hidden" id="mobile-menu-button" aria-label="Toggle menu">
+                    <svg class="w-6 h-6" id="menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                    <svg class="w-6 h-6 hidden" id="close-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden py-4 border-t border-border hidden">
+                <nav class="flex flex-col space-y-4">
+                    <a href="index.html" class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">Home</a>
+                    <a href="about.html" class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">About</a>
+                    <a href="constituency.html" class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">My constituency</a>
+                    <a href="work-impact.html" class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">Work & Impact</a>
+                    <a href="news.html" class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">News</a>
+                    <a href="media-gallery.html" class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">Media gallery</a>
+                    <a href="connect-engage.html" class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">Connect & Engage</a>
+                    <a href="events.html" class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">Events</a>
+                    <a href="contact.html" class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-primary py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-primary-foreground mb-4">
+                Work & Impact
+            </h1>
+            <p class="text-xl text-primary-foreground/90 max-w-3xl mx-auto mb-8">
+                Track parliamentary achievements, development projects, and measurable impact on our community through transparent reporting and data-driven insights.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="document.getElementById('parliament').scrollIntoView({behavior: 'smooth'})" 
+                        class="bg-primary-foreground text-primary px-8 py-3 rounded-lg font-semibold hover:bg-primary-foreground/90 transition-colors">
+                    Parliament Dashboard
+                </button>
+                <button onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})" 
+                        class="border-2 border-primary-foreground text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-primary-foreground hover:text-primary transition-colors">
+                    Development Projects
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parliament Dashboard -->
+    <section id="parliament" class="py-16 bg-background">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    Parliament Dashboard
+                </h2>
+                <p class="text-muted-foreground max-w-2xl mx-auto">
+                    Comprehensive overview of parliamentary activities, attendance records, and legislative contributions
+                </p>
+            </div>
+
+            <!-- Key Stats -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div class="bg-card rounded-2xl p-6 text-center shadow-card hover:shadow-elegant transition-all duration-300">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-3xl font-bold text-foreground mb-2">96.8%</h3>
+                    <p class="text-muted-foreground">Parliament Attendance</p>
+                </div>
+
+                <div class="bg-card rounded-2xl p-6 text-center shadow-card hover:shadow-elegant transition-all duration-300">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-3xl font-bold text-foreground mb-2">42</h3>
+                    <p class="text-muted-foreground">Bills Introduced</p>
+                </div>
+
+                <div class="bg-card rounded-2xl p-6 text-center shadow-card hover:shadow-elegant transition-all duration-300">
+                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-3xl font-bold text-foreground mb-2">285</h3>
+                    <p class="text-muted-foreground">Questions Raised</p>
+                </div>
+
+                <div class="bg-card rounded-2xl p-6 text-center shadow-card hover:shadow-elegant transition-all duration-300">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-3xl font-bold text-foreground mb-2">8</h3>
+                    <p class="text-muted-foreground">Committee Roles</p>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+                <div class="bg-card rounded-2xl p-6 shadow-card">
+                    <h3 class="text-xl font-semibold text-foreground mb-4">Monthly Attendance Trend</h3>
+                    <canvas id="attendanceChart" width="400" height="300"></canvas>
+                </div>
+
+                <div class="bg-card rounded-2xl p-6 shadow-card">
+                    <h3 class="text-xl font-semibold text-foreground mb-4">Bills by Category</h3>
+                    <canvas id="billsChart" width="400" height="300"></canvas>
+                </div>
+            </div>
+
+            <!-- Recent Bills -->
+            <div class="bg-card rounded-2xl p-6 shadow-card mb-8">
+                <h3 class="text-xl font-semibold text-foreground mb-6">Recent Bills & Questions</h3>
+                <div class="space-y-4">
+                    <div class="border-l-4 border-green-500 pl-6 py-3">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="font-semibold text-foreground">Rural Healthcare Access Bill 2024</h4>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">Passed</span>
+                        </div>
+                        <p class="text-muted-foreground text-sm">Legislation to improve healthcare accessibility in rural areas with mobile medical units and telemedicine infrastructure.</p>
+                        <p class="text-xs text-muted-foreground mt-2">Introduced: March 15, 2024</p>
+                    </div>
+
+                    <div class="border-l-4 border-blue-500 pl-6 py-3">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="font-semibold text-foreground">Educational Technology Enhancement Act</h4>
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">Under Review</span>
+                        </div>
+                        <p class="text-muted-foreground text-sm">Proposal to integrate modern technology in rural schools and provide digital literacy training for teachers.</p>
+                        <p class="text-xs text-muted-foreground mt-2">Introduced: February 28, 2024</p>
+                    </div>
+
+                    <div class="border-l-4 border-orange-500 pl-6 py-3">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="font-semibold text-foreground">Question on Water Supply Infrastructure</h4>
+                            <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded-full text-xs">Answered</span>
+                        </div>
+                        <p class="text-muted-foreground text-sm">Raised concerns about inadequate water supply infrastructure in 25 villages and requested government action plan.</p>
+                        <p class="text-xs text-muted-foreground mt-2">Raised: March 8, 2024 | Answered: March 12, 2024</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Development Projects -->
+    <section id="projects" class="py-16 bg-secondary/30">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    Development Projects
+                </h2>
+                <p class="text-muted-foreground max-w-2xl mx-auto">
+                    Track the progress of major infrastructure and development initiatives across our constituency
+                </p>
+            </div>
+
+            <!-- Project Status Overview -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-card rounded-2xl p-6 shadow-card text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-foreground mb-2">18</h3>
+                    <p class="text-muted-foreground font-medium">In Planning</p>
+                </div>
+
+                <div class="bg-card rounded-2xl p-6 shadow-card text-center">
+                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-foreground mb-2">24</h3>
+                    <p class="text-muted-foreground font-medium">Ongoing</p>
+                </div>
+
+                <div class="bg-card rounded-2xl p-6 shadow-card text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-foreground mb-2">36</h3>
+                    <p class="text-muted-foreground font-medium">Completed</p>
+                </div>
+            </div>
+
+            <!-- Project Cards -->
+            <div class="space-y-8" id="project-tracker">
+                <!-- Major Infrastructure Project -->
+                <div class="bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-elegant transition-all duration-300">
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-4">
+                            <div>
+                                <h3 class="text-xl font-semibold text-foreground mb-2">Highway Expansion & Modernization</h3>
+                                <p class="text-muted-foreground">4-lane highway connecting major towns with modern infrastructure and safety features</p>
+                            </div>
+                            <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">Ongoing</span>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                            <div>
+                                <p class="text-xs text-muted-foreground mb-1">Budget Allocated</p>
+                                <p class="text-lg font-semibold text-foreground">₹450 Crores</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-muted-foreground mb-1">Utilized</p>
+                                <p class="text-lg font-semibold text-foreground">₹315 Crores (70%)</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-muted-foreground mb-1">Completion</p>
+                                <p class="text-lg font-semibold text-foreground">75%</p>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="text-muted-foreground">Progress</span>
+                                <span class="text-foreground font-medium">75%</span>
+                            </div>
+                            <div class="w-full bg-border rounded-full h-2">
+                                <div class="bg-orange-600 h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <div class="text-center">
+                                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                                    <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/>
+                                    </svg>
+                                </div>
+                                <p class="text-xs text-muted-foreground">Land Acquisition</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                                    <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/>
+                                    </svg>
+                                </div>
+                                <p class="text-xs text-muted-foreground">Environmental Clearance</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                                    <div class="w-3 h-3 bg-orange-600 rounded-full"></div>
+                                </div>
+                                <p class="text-xs text-muted-foreground">Construction</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                                    <div class="w-3 h-3 bg-gray-400 rounded-full"></div>
+                                </div>
+                                <p class="text-xs text-muted-foreground">Final Inspection</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-secondary/50 p-4">
+                        <div class="flex items-center justify-between">
+                            <p class="text-sm text-muted-foreground">Expected Completion: December 2024</p>
+                            <button class="text-primary hover:text-primary/80 text-sm font-medium">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Healthcare Project -->
+                <div class="bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-elegant transition-all duration-300">
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-4">
+                            <div>
+                                <h3 class="text-xl font-semibold text-foreground mb-2">Regional Medical College & Hospital</h3>
+                                <p class="text-muted-foreground">State-of-the-art medical facility with 500-bed capacity and specialized treatment centers</p>
+                            </div>
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Completed</span>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                            <div>
+                                <p class="text-xs text-muted-foreground mb-1">Total Investment</p>
+                                <p class="text-lg font-semibold text-foreground">₹280 Crores</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-muted-foreground mb-1">Patients Served</p>
+                                <p class="text-lg font-semibold text-foreground">25,000+ monthly</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-muted-foreground mb-1">Jobs Created</p>
+                                <p class="text-lg font-semibold text-foreground">1,200+</p>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="text-muted-foreground">Impact Score</span>
+                                <span class="text-foreground font-medium">100%</span>
+                            </div>
+                            <div class="w-full bg-border rounded-full h-2">
+                                <div class="bg-green-600 h-2 rounded-full" style="width: 100%"></div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="text-center p-4 bg-green-50 rounded-lg">
+                                <h4 class="text-2xl font-bold text-green-600 mb-1">60%</h4>
+                                <p class="text-sm text-green-700">Reduced Patient Travel</p>
+                            </div>
+                            <div class="text-center p-4 bg-blue-50 rounded-lg">
+                                <h4 class="text-2xl font-bold text-blue-600 mb-1">40%</h4>
+                                <p class="text-sm text-blue-700">Lower Treatment Costs</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-secondary/50 p-4">
+                        <div class="flex items-center justify-between">
+                            <p class="text-sm text-muted-foreground">Inaugurated: January 2024</p>
+                            <button class="text-primary hover:text-primary/80 text-sm font-medium">View Impact Report</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-dark text-primary-foreground py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- About Section -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+                            <span class="text-primary-foreground font-bold">S</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Sri Bharat</h3>
+                            <p class="text-sm text-primary-foreground/80">Member of Parliament</p>
+                        </div>
+                    </div>
+                    <p class="text-primary-foreground/80 mb-6 max-w-md">
+                        Dedicated to comprehensive development and serving the people with transparency, accountability, and unwavering commitment to progress.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Home</a></li>
+                        <li><a href="about.html" class="text-primary-foreground/80 hover:text-primary-foreground transition-colors">About</a></li>
+                        <li><a href="constituency.html" class="text-primary-foreground/80 hover:text-primary-foreground transition-colors">My constituency</a></li>
+                        <li><a href="#parliament" class="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Parliament Work</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Contact Info</h4>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                            <span class="text-primary-foreground/80">+91 9876543210</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 7.89a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <span class="text-primary-foreground/80">office@sribharat.gov.in</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-primary-foreground/20 pt-8 mt-12 text-center">
+                <p class="text-primary-foreground/80 text-sm">
+                    © 2024 Sri Bharat. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="work-impact.js"></script>
+</body>
+
+</html>
