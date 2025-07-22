@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Bharat - Member of Parliament</title>
+    <meta name="description" content="Sri Bharat - Dedicated to comprehensive development and serving the people">
+    <meta name="author" content="Sri Bharat">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: 'hsl(35, 91%, 51%)',
+                        'primary-foreground': 'hsl(0, 0%, 100%)',
+                        secondary: 'hsl(45, 100%, 96%)',
+                        'secondary-foreground': 'hsl(25, 47%, 15%)',
+                        background: 'hsl(250, 100%, 99%)',
+                        foreground: 'hsl(25, 47%, 15%)',
+                        card: 'hsl(0, 0%, 100%)',
+                        'card-foreground': 'hsl(25, 47%, 15%)',
+                        muted: 'hsl(45, 100%, 96%)',
+                        'muted-foreground': 'hsl(25, 25%, 45%)',
+                        border: 'hsl(45, 100%, 90%)',
+                    },
+                    backgroundImage: {
+                        'gradient-primary': 'linear-gradient(135deg, hsl(35, 91%, 51%), hsl(45, 100%, 65%))',
+                        'gradient-hero': 'linear-gradient(135deg, hsl(35, 91%, 51%), hsl(45, 100%, 70%))',
+                        'gradient-dark': 'linear-gradient(135deg, hsl(25, 47%, 15%), hsl(35, 47%, 25%))',
+                    },
+                    boxShadow: {
+                        'elegant': '0 10px 30px -10px hsl(35 91% 51% / 0.3)',
+                        'card': '0 4px 20px -4px hsl(35 91% 51% / 0.15)',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-background text-foreground">
+    <!-- Header -->
+    <header class="bg-background shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-gradient-primary rounded-full flex items-center justify-center">
+                        <span class="text-primary-foreground font-bold text-sm">S</span>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-foreground">Sri Bharat</h1>
+                        <p class="text-xs text-muted-foreground">Member of Parliament</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#"
+                        class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium">Home</a>
+                    <a href="#about"
+                        class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium">About
+                        Us</a>
+                    <a href="#specialization"
+                        class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium">Our
+                        Specialization</a>
+                    <a href="#why-fought"
+                        class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium">Why
+                        I fought?</a>
+                    <a href="#news"
+                        class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium">News
+                        & Articles</a>
+                    <a href="#files"
+                        class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium">Files</a>
+                </nav>
+
+                <!-- Desktop Contact Button -->
+                <div class="hidden md:block">
+                    <button
+                        class="bg-gradient-primary hover:opacity-90 text-primary-foreground px-6 py-2 rounded-lg font-medium transition-opacity">
+                        Contact Us
+                    </button>
+                </div>
+
+                <!-- Mobile menu button -->
+                <button class="md:hidden" id="mobile-menu-button" aria-label="Toggle menu">
+                    <svg class="w-6 h-6" id="menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                    <svg class="w-6 h-6 hidden" id="close-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden py-4 border-t border-border hidden">
+                <nav class="flex flex-col space-y-4">
+                    <a href="#"
+                        class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">Home</a>
+                    <a href="#about"
+                        class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">About
+                        Us</a>
+                    <a href="#specialization"
+                        class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">Our
+                        Specialization</a>
+                    <a href="#why-fought"
+                        class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">Why
+                        I fought?</a>
+                    <a href="#news"
+                        class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">News
+                        & Articles</a>
+                    <a href="#files"
+                        class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">Files</a>
+                    <button
+                        class="bg-gradient-primary hover:opacity-90 text-primary-foreground w-fit mx-2 mt-4 px-6 py-2 rounded-lg font-medium transition-opacity">
+                        Contact Us
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-hero py-12 md:py-20">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Content -->
+                <div class="text-left">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 leading-tight">
+                        Sri Bharat
+                    </h1>
+                    <p class="text-xl text-primary-foreground/90 mb-2">Member of Parliament</p>
+                    <h2 class="text-2xl md:text-3xl font-semibold text-primary-foreground mb-8">
+                        "Together for Comprehensive Development"
+                    </h2>
+
+                    <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                        <button
+                            class="bg-primary-foreground text-primary hover:bg-primary-foreground/90 shadow-elegant px-8 py-3 rounded-lg font-semibold transition-all">
+                            Contact Us
+                        </button>
+                        <button
+                            class="border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary px-8 py-3 rounded-lg font-semibold transition-all flex items-center justify-center">
+                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                            Meet Politics
+                        </button>
+                    </div>
+
+                    <div class="flex items-center text-primary-foreground/80 text-sm">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                        Latest updates & achievements
+                    </div>
+                </div>
+
+                <!-- Right Content - Image -->
+                <div class="relative">
+                    <div class="relative rounded-2xl overflow-hidden shadow-elegant">
+                        <img src="/lovable-uploads/85570b39-334e-4215-81c2-fd70a86bd973.png"
+                            alt="Scales of Justice representing legal expertise and fair judgment"
+                            class="w-full h-[400px] md:h-[500px] object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-foreground/20 to-transparent"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Performance Dashboard -->
+    <section class="py-16 bg-background">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    Performance Dashboard
+                </h2>
+                <p class="text-muted-foreground max-w-2xl mx-auto">
+                    Track record of dedication to serving the people and driving meaningful change
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div
+                    class="bg-card rounded-2xl p-8 text-center shadow-card hover:shadow-elegant transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-3xl md:text-4xl font-bold text-foreground mb-2">2.1M+</h3>
+                    <p class="text-muted-foreground font-medium">Constituency Members</p>
+                </div>
+
+                <div
+                    class="bg-card rounded-2xl p-8 text-center shadow-card hover:shadow-elegant transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
+                        <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-3xl md:text-4xl font-bold text-foreground mb-2">150+</h3>
+                    <p class="text-muted-foreground font-medium">Development Projects</p>
+                </div>
+
+                <div
+                    class="bg-card rounded-2xl p-8 text-center shadow-card hover:shadow-elegant transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
+                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-3xl md:text-4xl font-bold text-foreground mb-2">95%</h3>
+                    <p class="text-muted-foreground font-medium">Project Completion</p>
+                </div>
+
+                <div
+                    class="bg-card rounded-2xl p-8 text-center shadow-card hover:shadow-elegant transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
+                        <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-3xl md:text-4xl font-bold text-foreground mb-2">500+</h3>
+                    <p class="text-muted-foreground font-medium">Lives Changed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="py-16 bg-secondary/30">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    Latest News & Achievements
+                </h2>
+                <p class="text-muted-foreground max-w-2xl mx-auto mb-8">
+                    Stay updated with our ongoing initiatives and recent accomplishments
+                </p>
+
+                <!-- Category Filter -->
+                <div class="flex flex-wrap justify-center gap-2 mb-8">
+                    <button
+                        class="category-filter active px-4 py-2 rounded-full text-sm font-medium transition-all duration-200"
+                        data-category="All">All</button>
+                    <button
+                        class="category-filter px-4 py-2 rounded-full text-sm font-medium transition-all duration-200"
+                        data-category="Healthcare">Healthcare</button>
+                    <button
+                        class="category-filter px-4 py-2 rounded-full text-sm font-medium transition-all duration-200"
+                        data-category="Education">Education</button>
+                    <button
+                        class="category-filter px-4 py-2 rounded-full text-sm font-medium transition-all duration-200"
+                        data-category="Infrastructure">Infrastructure</button>
+                    <button
+                        class="category-filter px-4 py-2 rounded-full text-sm font-medium transition-all duration-200"
+                        data-category="Development">Development</button>
+                </div>
+            </div>
+
+            <div id="news-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- News items will be populated by JavaScript -->
+            </div>
+
+            <div class="text-center">
+                <button
+                    class="border border-border text-foreground hover:bg-primary hover:text-primary-foreground px-8 py-3 rounded-lg font-medium transition-all flex items-center mx-auto">
+                    View All News
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="py-16 bg-background">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    Featured Development Projects
+                </h2>
+                <p class="text-muted-foreground max-w-2xl mx-auto">
+                    Transformative projects creating sustainable development and improving quality of life
+                </p>
+            </div>
+
+            <!-- Horizontal Scrolling Container -->
+            <div class="relative">
+                <!-- Navigation Buttons -->
+                <button id="scroll-left"
+                    class="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-card shadow-card rounded-full flex items-center justify-center hover:shadow-elegant transition-all duration-300 border border-border"
+                    aria-label="Scroll left">
+                    <svg class="w-6 h-6 text-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
+                        </path>
+                    </svg>
+                </button>
+
+                <button id="scroll-right"
+                    class="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-card shadow-card rounded-full flex items-center justify-center hover:shadow-elegant transition-all duration-300 border border-border"
+                    aria-label="Scroll right">
+                    <svg class="w-6 h-6 text-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+
+                <!-- Scrollable Cards Container -->
+                <div id="projects-container" class="flex gap-8 overflow-x-auto scrollbar-hide px-12 py-4">
+                    <!-- Project cards will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <button
+                    class="border border-border text-foreground hover:bg-primary hover:text-primary-foreground px-8 py-3 rounded-lg font-medium transition-all">
+                    Explore All Projects
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Victory Section -->
+    <section class="py-20 bg-gradient-primary relative overflow-hidden">
+        <!-- Decorative Elements -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-10 left-10 w-32 h-32 border-2 border-primary-foreground rounded-full"></div>
+            <div class="absolute bottom-10 right-10 w-24 h-24 border-2 border-primary-foreground rounded-full"></div>
+            <div class="absolute top-1/2 right-1/4 w-16 h-16 border-2 border-primary-foreground rounded-full"></div>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-12">
+                <div
+                    class="inline-flex items-center justify-center w-20 h-20 bg-primary-foreground/20 backdrop-blur-sm rounded-full mb-6">
+                    <svg class="w-10 h-10 text-primary-foreground" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z">
+                        </path>
+                    </svg>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold text-primary-foreground mb-4">
+                    Historic Victory 2024
+                </h2>
+                <p class="text-xl text-primary-foreground/90 max-w-3xl mx-auto">
+                    Grateful for the overwhelming trust shown. Together we champion development, governance, and growth.
+                    Together we are rewriting a brighter future!
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div
+                    class="text-center bg-primary-foreground/10 backdrop-blur-sm rounded-2xl p-8 border border-primary-foreground/20">
+                    <h3 class="text-4xl md:text-5xl font-bold text-primary-foreground mb-2">65.8%</h3>
+                    <p class="text-xl font-semibold text-primary-foreground mb-2">Vote Share</p>
+                    <p class="text-primary-foreground/80">Highest in constituency history</p>
+                </div>
+
+                <div
+                    class="text-center bg-primary-foreground/10 backdrop-blur-sm rounded-2xl p-8 border border-primary-foreground/20">
+                    <h3 class="text-4xl md:text-5xl font-bold text-primary-foreground mb-2">2,45,000+</h3>
+                    <p class="text-xl font-semibold text-primary-foreground mb-2">Victory Margin</p>
+                    <p class="text-primary-foreground/80">Record breaking mandate</p>
+                </div>
+
+                <div
+                    class="text-center bg-primary-foreground/10 backdrop-blur-sm rounded-2xl p-8 border border-primary-foreground/20">
+                    <h3 class="text-4xl md:text-5xl font-bold text-primary-foreground mb-2">78%</h3>
+                    <p class="text-xl font-semibold text-primary-foreground mb-2">Voter Turnout</p>
+                    <p class="text-primary-foreground/80">Democracy at its finest</p>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <p class="text-primary-foreground/90 mb-6 italic text-lg">
+                    "This victory belongs to every citizen who believes in progress and development. Together we will
+                    transform dreams into reality."
+                </p>
+                <button
+                    class="bg-primary-foreground text-primary hover:bg-primary-foreground/90 shadow-elegant px-8 py-3 rounded-lg font-semibold transition-all">
+                    Read About Victory
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="py-16 bg-secondary/30">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center mb-12">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                        Upcoming Events
+                    </h2>
+                    <p class="text-muted-foreground">
+                        Join us in our community engagement initiatives
+                    </p>
+                </div>
+                <button
+                    class="hidden md:flex items-center border border-border text-foreground hover:bg-primary hover:text-primary-foreground px-6 py-2 rounded-lg font-medium transition-all">
+                    View All Events
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <div id="events-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Events will be populated by JavaScript -->
+            </div>
+
+            <div class="text-center mt-8 md:hidden">
+                <button
+                    class="border border-border text-foreground hover:bg-primary hover:text-primary-foreground px-6 py-2 rounded-lg font-medium transition-all flex items-center mx-auto">
+                    View All Events
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Section -->
+    <section class="py-16 bg-background">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    Stay Connected
+                </h2>
+                <p class="text-muted-foreground text-lg mb-12">
+                    Follow our journey and get the latest updates on development initiatives
+                </p>
+
+                <!-- Social Media Links -->
+                <div class="flex justify-center space-x-6 mb-12">
+                    <a href="#" aria-label="Facebook"
+                        class="w-14 h-14 bg-primary/10 hover:bg-primary hover:text-primary-foreground text-primary rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Twitter"
+                        class="w-14 h-14 bg-primary/10 hover:bg-primary hover:text-primary-foreground text-primary rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Instagram"
+                        class="w-14 h-14 bg-primary/10 hover:bg-primary hover:text-primary-foreground text-primary rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.618 5.367 11.986 11.988 11.986 6.618 0 11.986-5.368 11.986-11.986C24.003 5.367 18.635.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.49-3.323-1.297L3.182 17.635l1.935-1.944c-.807-.875-1.297-2.026-1.297-3.323 0-2.734 2.215-4.948 4.948-4.948s4.948 2.214 4.948 4.948-2.214 4.949-4.948 4.949l-.319-.329z" />
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="YouTube"
+                        class="w-14 h-14 bg-primary/10 hover:bg-primary hover:text-primary-foreground text-primary rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Newsletter Subscription -->
+                <div class="bg-card rounded-2xl p-8 shadow-card">
+                    <h3 class="text-2xl font-semibold text-foreground mb-4">
+                        Subscribe to Newsletter
+                    </h3>
+                    <p class="text-muted-foreground mb-6">
+                        Get updates about new projects, achievements, and upcoming events
+                    </p>
+
+                    <form id="newsletter-form" class="max-w-md mx-auto">
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <input type="email" id="newsletter-email" placeholder="Enter your email address"
+                                class="flex-1 px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                                required>
+                            <button type="submit"
+                                class="bg-gradient-primary hover:opacity-90 text-primary-foreground px-8 py-3 rounded-lg font-medium transition-all flex items-center justify-center">
+                                <span id="subscribe-text">Subscribe</span>
+                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+
+                    <div id="subscription-message" class="mt-4 p-4 bg-green-100 text-green-800 rounded-lg hidden">
+                        Thank you for subscribing! You'll receive updates soon.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-dark text-primary-foreground">
+        <!-- CTA Section -->
+        <div class="bg-primary py-16">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
+                    Together We Build Tomorrow
+                </h2>
+                <p class="text-xl text-primary-foreground/90 mb-8 max-w-3xl mx-auto">
+                    Your support drives our mission to create sustainable development and prosperity for all. Join us in
+                    building a brighter future for our community.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button
+                        class="bg-primary-foreground text-primary px-8 py-3 rounded-lg font-semibold hover:bg-primary-foreground/90 transition-colors">
+                        Contact Today
+                    </button>
+                    <button
+                        class="border-2 border-primary-foreground text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-primary-foreground hover:text-primary transition-colors">
+                        Read Our Manifesto
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Footer -->
+        <div class="py-16">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- About Section -->
+                    <div class="lg:col-span-2">
+                        <div class="flex items-center space-x-2 mb-6">
+                            <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+                                <span class="text-primary-foreground font-bold">S</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold">Sri Bharat</h3>
+                                <p class="text-sm text-primary-foreground/80">Member of Parliament</p>
+                            </div>
+                        </div>
+                        <p class="text-primary-foreground/80 mb-6 max-w-md">
+                            Dedicated to comprehensive development and serving the people with transparency,
+                            accountability, and unwavering commitment to progress.
+                        </p>
+
+                        <!-- Contact Info -->
+                        <div class="space-y-3">
+                            <div class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                                    </path>
+                                </svg>
+                                <span class="text-primary-foreground/80">+91 9876543210</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 8l7.89 7.89a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                    </path>
+                                </svg>
+                                <span class="text-primary-foreground/80">office@sribharat.gov.in</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                    </path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                                <span class="text-primary-foreground/80">Parliament House, New Delhi</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div>
+                        <h4 class="text-lg font-semibold mb-6">Quick Links</h4>
+                        <ul class="space-y-3">
+                            <li><a href="#about"
+                                    class="text-primary-foreground/80 hover:text-primary-foreground transition-colors">About
+                                    Us</a></li>
+                            <li><a href="#projects"
+                                    class="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Projects</a>
+                            </li>
+                            <li><a href="#news"
+                                    class="text-primary-foreground/80 hover:text-primary-foreground transition-colors">News
+                                    & Updates</a></li>
+                            <li><a href="#contact"
+                                    class="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Development Areas -->
+                    <div>
+                        <h4 class="text-lg font-semibold mb-6">Focus Areas</h4>
+                        <ul class="space-y-3">
+                            <li><a href="#healthcare"
+                                    class="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Healthcare</a>
+                            </li>
+                            <li><a href="#education"
+                                    class="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Education</a>
+                            </li>
+                            <li><a href="#infrastructure"
+                                    class="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Infrastructure</a>
+                            </li>
+                            <li><a href="#agriculture"
+                                    class="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Agriculture</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Social Links -->
+                <div class="border-t border-primary-foreground/20 pt-8 mt-12">
+                    <div class="flex flex-col md:flex-row justify-between items-center">
+                        <div class="flex space-x-6 mb-4 md:mb-0">
+                            <a href="#" aria-label="Facebook"
+                                class="w-10 h-10 bg-primary-foreground/10 hover:bg-primary text-primary-foreground rounded-full flex items-center justify-center transition-all duration-300">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                                </svg>
+                            </a>
+                            <a href="#" aria-label="Twitter"
+                                class="w-10 h-10 bg-primary-foreground/10 hover:bg-primary text-primary-foreground rounded-full flex items-center justify-center transition-all duration-300">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                                </svg>
+                            </a>
+                            <a href="#" aria-label="Instagram"
+                                class="w-10 h-10 bg-primary-foreground/10 hover:bg-primary text-primary-foreground rounded-full flex items-center justify-center transition-all duration-300">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.618 5.367 11.986 11.988 11.986 6.618 0 11.986-5.368 11.986-11.986C24.003 5.367 18.635.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.49-3.323-1.297L3.182 17.635l1.935-1.944c-.807-.875-1.297-2.026-1.297-3.323 0-2.734 2.215-4.948 4.948-4.948s4.948 2.214 4.948 4.948-2.214 4.949-4.948 4.949l-.319-.329z" />
+                                </svg>
+                            </a>
+                            <a href="#" aria-label="YouTube"
+                                class="w-10 h-10 bg-primary-foreground/10 hover:bg-primary text-primary-foreground rounded-full flex items-center justify-center transition-all duration-300">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                                </svg>
+                            </a>
+                        </div>
+
+                        <div class="text-center md:text-right">
+                            <p class="text-primary-foreground/80 text-sm">
+                                © 2024 Sri Bharat. All rights reserved.
+                            </p>
+                            <p class="text-primary-foreground/60 text-xs mt-1">
+                                Privacy Policy • Terms of Service
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
