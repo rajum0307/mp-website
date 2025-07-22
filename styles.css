@@ -108,3 +108,33 @@ a:focus {
 .event-card:hover {
   transform: translateY(-2px);
 }
+
+/* About page specific styles */
+.nav-link {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(25, 47%, 15%);
+}
+
+.nav-link:hover {
+  background-color: hsl(35, 91%, 51%, 0.1);
+  color: hsl(35, 91%, 51%);
+}
+
+.nav-link.active {
+  background-color: hsl(35, 91%, 51%);
+  color: hsl(0, 0%, 100%);
+}
+
+/* Timeline styles */
+.timeline-item {
+  transition: all 0.3s ease;
+}
+
+.timeline-item:hover {
+  transform: scale(1.02);
+}
+
+/* Testimonial card hover effects */
+.bg-card:hover {
+  transform: translateY(-2px);
+}
