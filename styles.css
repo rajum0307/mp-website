@@ -138,3 +138,75 @@ a:focus {
 .bg-card:hover {
   transform: translateY(-2px);
 }
+
+/* Map filter styles */
+.map-filter {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(25, 47%, 15%);
+}
+
+.map-filter:hover {
+  background-color: hsl(35, 91%, 51%, 0.1);
+}
+
+.map-filter.active {
+  background-color: hsl(35, 91%, 51%);
+  color: hsl(0, 0%, 100%);
+  box-shadow: 0 4px 12px -4px hsl(35 91% 51% / 0.3);
+}
+
+/* Progress filter styles */
+.progress-filter {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(25, 47%, 15%);
+}
+
+.progress-filter:hover {
+  background-color: hsl(35, 91%, 51%, 0.1);
+}
+
+.progress-filter.active {
+  background-color: hsl(35, 91%, 51%);
+  color: hsl(0, 0%, 100%);
+  box-shadow: 0 4px 12px -4px hsl(35 91% 51% / 0.3);
+}
+
+/* Before/After Slider Styles */
+.before-after-slider {
+  position: relative;
+  overflow: hidden;
+}
+
+.slider-handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  cursor: ew-resize;
+}
+
+.before-image,
+.after-image {
+  transition: clip-path 0.1s ease;
+}
+
+/* Progress project animations */
+.progress-project {
+  transition: all 0.3s ease;
+}
+
+.progress-project:hover {
+  transform: translateY(-4px);
+}
+
+/* Map popup styles */
+.leaflet-popup-content-wrapper {
+  border-radius: 12px;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+}
+
+.leaflet-popup-content {
+  margin: 0;
+  line-height: 1.4;
+}
