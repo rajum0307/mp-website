@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events & Visits - Sri Bharat</title>
+    <meta name="description" content="Upcoming events, past visits, and RSVP system for Sri Bharat's public engagements">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: 'hsl(35, 91%, 51%)',
+                        'primary-foreground': 'hsl(0, 0%, 100%)',
+                        secondary: 'hsl(45, 100%, 96%)',
+                        'secondary-foreground': 'hsl(25, 47%, 15%)',
+                        background: 'hsl(250, 100%, 99%)',
+                        foreground: 'hsl(25, 47%, 15%)',
+                        card: 'hsl(0, 0%, 100%)',
+                        'card-foreground': 'hsl(25, 47%, 15%)',
+                        muted: 'hsl(45, 100%, 96%)',
+                        'muted-foreground': 'hsl(25, 25%, 45%)',
+                        border: 'hsl(45, 100%, 90%)',
+                    },
+                    backgroundImage: {
+                        'gradient-primary': 'linear-gradient(135deg, hsl(35, 91%, 51%), hsl(45, 100%, 65%))',
+                        'gradient-hero': 'linear-gradient(135deg, hsl(35, 91%, 51%), hsl(45, 100%, 70%))',
+                        'gradient-dark': 'linear-gradient(135deg, hsl(25, 47%, 15%), hsl(35, 47%, 25%))',
+                    },
+                    boxShadow: {
+                        'elegant': '0 10px 30px -10px hsl(35 91% 51% / 0.3)',
+                        'card': '0 4px 20px -4px hsl(35 91% 51% / 0.15)',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-background text-foreground">
+    <!-- Header -->
+    <header class="bg-background shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-gradient-primary rounded-full flex items-center justify-center">
+                        <span class="text-primary-foreground font-bold text-sm">S</span>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-foreground">Sri Bharat</h1>
+                        <p class="text-xs text-muted-foreground">Member of Parliament</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link text-foreground hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg transition-colors duration-200 text-sm font-medium">Home</a>
+                    <a href="about.html" class="nav-link text-foreground hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg transition-colors duration-200 text-sm font-medium">About</a>
+                    <a href="constituency.html" class="nav-link text-foreground hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg transition-colors duration-200 text-sm font-medium">My constituency</a>
+                    <a href="work-impact.html" class="nav-link text-foreground hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg transition-colors duration-200 text-sm font-medium">Work & Impact</a>
+                    <a href="news.html" class="nav-link text-foreground hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg transition-colors duration-200 text-sm font-medium">News</a>
+                    <a href="media-gallery.html" class="nav-link text-foreground hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg transition-colors duration-200 text-sm font-medium">Media gallery</a>
+                    <a href="connect-engage.html" class="nav-link text-foreground hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg transition-colors duration-200 text-sm font-medium">Connect & Engage</a>
+                    <a href="events.html" class="nav-link bg-primary text-primary-foreground px-3 py-2 rounded-lg transition-colors duration-200 text-sm font-medium">Events</a>
+                    <a href="contact.html" class="nav-link text-foreground hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg transition-colors duration-200 text-sm font-medium">Contact</a>
+                </nav>
+
+                <!-- Desktop Contact Button -->
+                <div class="hidden md:block">
+                    <button class="bg-gradient-primary hover:opacity-90 text-primary-foreground px-6 py-2 rounded-lg font-medium transition-opacity">
+                        Contact Us
+                    </button>
+                </div>
+
+                <!-- Mobile menu button -->
+                <button class="md:hidden" id="mobile-menu-button" aria-label="Toggle menu">
+                    <svg class="w-6 h-6" id="menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                    <svg class="w-6 h-6 hidden" id="close-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden py-4 border-t border-border hidden">
+                <nav class="flex flex-col space-y-4">
+                    <a href="index.html" class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">Home</a>
+                    <a href="about.html" class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">About</a>
+                    <a href="constituency.html" class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">My constituency</a>
+                    <a href="work-impact.html" class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">Work & Impact</a>
+                    <a href="news.html" class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">News</a>
+                    <a href="media-gallery.html" class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">Media gallery</a>
+                    <a href="connect-engage.html" class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">Connect & Engage</a>
+                    <a href="events.html" class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">Events</a>
+                    <a href="contact.html" class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-primary py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-primary-foreground mb-4">
+                Events & Visits
+            </h1>
+            <p class="text-xl text-primary-foreground/90 max-w-3xl mx-auto mb-8">
+                Stay connected with our community events, public meetings, and visit schedules. RSVP for upcoming events and explore highlights from past engagements.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="document.getElementById('upcoming').scrollIntoView({behavior: 'smooth'})" 
+                        class="bg-primary-foreground text-primary px-8 py-3 rounded-lg font-semibold hover:bg-primary-foreground/90 transition-colors">
+                    Upcoming Events
+                </button>
+                <button onclick="document.getElementById('calendar').scrollIntoView({behavior: 'smooth'})" 
+                        class="border-2 border-primary-foreground text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-primary-foreground hover:text-primary transition-colors">
+                    View Calendar
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Filters -->
+    <section class="py-8 bg-secondary/30">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center gap-2">
+                <button class="event-filter active px-4 py-2 rounded-full text-sm font-medium transition-all" data-filter="all">All Events</button>
+                <button class="event-filter px-4 py-2 rounded-full text-sm font-medium transition-all" data-filter="meeting">Public Meetings</button>
+                <button class="event-filter px-4 py-2 rounded-full text-sm font-medium transition-all" data-filter="townhall">Town Halls</button>
+                <button class="event-filter px-4 py-2 rounded-full text-sm font-medium transition-all" data-filter="visit">Field Visits</button>
+                <button class="event-filter px-4 py-2 rounded-full text-sm font-medium transition-all" data-filter="inauguration">Inaugurations</button>
+                <button class="event-filter px-4 py-2 rounded-full text-sm font-medium transition-all" data-filter="workshop">Workshops</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Events -->
+    <section id="upcoming" class="py-16 bg-background">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    Upcoming Events
+                </h2>
+                <p class="text-muted-foreground max-w-2xl mx-auto">
+                    Join us at upcoming public engagements and community events. RSVP to secure your participation.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8" id="upcoming-events">
+                <!-- Events will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Calendar -->
+    <section id="calendar" class="py-16 bg-secondary/30">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    Events Calendar
+                </h2>
+                <p class="text-muted-foreground max-w-2xl mx-auto">
+                    Interactive calendar view of all scheduled events and visits
+                </p>
+            </div>
+
+            <div class="bg-card rounded-2xl p-8 shadow-card">
+                <div class="flex items-center justify-between mb-8">
+                    <h3 class="text-xl font-semibold text-foreground">March 2024</h3>
+                    <div class="flex space-x-2">
+                        <button id="prev-month" class="w-10 h-10 bg-primary/10 hover:bg-primary hover:text-primary-foreground text-primary rounded-lg flex items-center justify-center transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                            </svg>
+                        </button>
+                        <button id="next-month" class="w-10 h-10 bg-primary/10 hover:bg-primary hover:text-primary-foreground text-primary rounded-lg flex items-center justify-center transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Calendar Grid -->
+                <div class="grid grid-cols-7 gap-1 mb-4">
+                    <div class="p-4 text-center font-medium text-muted-foreground">Sun</div>
+                    <div class="p-4 text-center font-medium text-muted-foreground">Mon</div>
+                    <div class="p-4 text-center font-medium text-muted-foreground">Tue</div>
+                    <div class="p-4 text-center font-medium text-muted-foreground">Wed</div>
+                    <div class="p-4 text-center font-medium text-muted-foreground">Thu</div>
+                    <div class="p-4 text-center font-medium text-muted-foreground">Fri</div>
+                    <div class="p-4 text-center font-medium text-muted-foreground">Sat</div>
+                </div>
+
+                <div id="calendar-grid" class="grid grid-cols-7 gap-1">
+                    <!-- Calendar days will be populated by JavaScript -->
+                </div>
+
+                <!-- Event Legend -->
+                <div class="mt-8 flex flex-wrap gap-4 justify-center">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-4 h-4 bg-blue-500 rounded"></div>
+                        <span class="text-sm text-muted-foreground">Public Meeting</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <div class="w-4 h-4 bg-green-500 rounded"></div>
+                        <span class="text-sm text-muted-foreground">Town Hall</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <div class="w-4 h-4 bg-orange-500 rounded"></div>
+                        <span class="text-sm text-muted-foreground">Field Visit</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <div class="w-4 h-4 bg-purple-500 rounded"></div>
+                        <span class="text-sm text-muted-foreground">Inauguration</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Past Events Gallery -->
+    <section id="past-events" class="py-16 bg-background">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    Past Events Gallery
+                </h2>
+                <p class="text-muted-foreground max-w-2xl mx-auto">
+                    Highlights and photo galleries from recent events and community visits
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12" id="past-events-gallery">
+                <!-- Past events will be populated by JavaScript -->
+            </div>
+
+            <div class="text-center">
+                <button id="load-more-events" class="border border-border text-foreground hover:bg-primary hover:text-primary-foreground px-8 py-3 rounded-lg font-medium transition-all">
+                    Load More Events
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP Modal -->
+    <div id="rsvp-modal" class="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50 hidden">
+        <div class="bg-card rounded-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-6">
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="text-xl font-semibold text-foreground">RSVP for Event</h3>
+                    <button id="close-modal" class="w-8 h-8 bg-muted rounded-full flex items-center justify-center hover:bg-border transition-colors">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <div id="modal-event-info" class="mb-6">
+                    <!-- Event info will be populated dynamically -->
+                </div>
+
+                <form id="rsvp-form">
+                    <div class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-2">First Name *</label>
+                                <input type="text" id="rsvp-first-name" required class="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-2">Last Name *</label>
+                                <input type="text" id="rsvp-last-name" required class="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-foreground mb-2">Email Address *</label>
+                            <input type="email" id="rsvp-email" required class="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-foreground mb-2">Phone Number</label>
+                            <input type="tel" id="rsvp-phone" class="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-2">Number of Attendees</label>
+                                <select id="rsvp-attendees" class="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                                    <option value="1">1 person</option>
+                                    <option value="2">2 people</option>
+                                    <option value="3">3 people</option>
+                                    <option value="4">4 people</option>
+                                    <option value="5">5+ people</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-2">Dietary Requirements</label>
+                                <select id="rsvp-dietary" class="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                                    <option value="none">None</option>
+                                    <option value="vegetarian">Vegetarian</option>
+                                    <option value="vegan">Vegan</option>
+                                    <option value="halal">Halal</option>
+                                    <option value="gluten-free">Gluten-free</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-foreground mb-2">Questions/Comments</label>
+                            <textarea id="rsvp-comments" rows="3" class="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Any questions or special requirements?"></textarea>
+                        </div>
+                    </div>
+                    <div class="flex space-x-4 mt-6">
+                        <button type="submit" class="flex-1 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors">
+                            Confirm RSVP
+                        </button>
+                        <button type="button" id="cancel-rsvp" class="flex-1 border border-border text-foreground px-6 py-3 rounded-lg font-medium hover:bg-secondary transition-colors">
+                            Cancel
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Event Details Modal -->
+    <div id="event-modal" class="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50 hidden">
+        <div class="bg-card rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-6" id="event-modal-content">
+                <!-- Event details will be populated dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-dark text-primary-foreground py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- About Section -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+                            <span class="text-primary-foreground font-bold">S</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Sri Bharat</h3>
+                            <p class="text-sm text-primary-foreground/80">Member of Parliament</p>
+                        </div>
+                    </div>
+                    <p class="text-primary-foreground/80 mb-6 max-w-md">
+                        Dedicated to comprehensive development and serving the people with transparency, accountability, and unwavering commitment to progress.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Home</a></li>
+                        <li><a href="about.html" class="text-primary-foreground/80 hover:text-primary-foreground transition-colors">About</a></li>
+                        <li><a href="#upcoming" class="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Upcoming Events</a></li>
+                        <li><a href="#calendar" class="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Events Calendar</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Contact Info</h4>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                            <span class="text-primary-foreground/80">+91 9876543210</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 7.89a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <span class="text-primary-foreground/80">office@sribharat.gov.in</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-primary-foreground/20 pt-8 mt-12 text-center">
+                <p class="text-primary-foreground/80 text-sm">
+                    © 2024 Sri Bharat. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="events.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect & Engage - Sri Bharat</title>
+    <meta name="description" content="Engage with Sri Bharat through public suggestions, polls, town halls, and community groups">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: 'hsl(35, 91%, 51%)',
+                        'primary-foreground': 'hsl(0, 0%, 100%)',
+                        secondary: 'hsl(45, 100%, 96%)',
+                        'secondary-foreground': 'hsl(25, 47%, 15%)',
+                        background: 'hsl(250, 100%, 99%)',
+                        foreground: 'hsl(25, 47%, 15%)',
+                        card: 'hsl(0, 0%, 100%)',
+                        'card-foreground': 'hsl(25, 47%, 15%)',
+                        muted: 'hsl(45, 100%, 96%)',
+                        'muted-foreground': 'hsl(25, 25%, 45%)',
+                        border: 'hsl(45, 100%, 90%)',
+                    },
+                    backgroundImage: {
+                        'gradient-primary': 'linear-gradient(135deg, hsl(35, 91%, 51%), hsl(45, 100%, 65%))',
+                        'gradient-hero': 'linear-gradient(135deg, hsl(35, 91%, 51%), hsl(45, 100%, 70%))',
+                        'gradient-dark': 'linear-gradient(135deg, hsl(25, 47%, 15%), hsl(35, 47%, 25%))',
+                    },
+                    boxShadow: {
+                        'elegant': '0 10px 30px -10px hsl(35 91% 51% / 0.3)',
+                        'card': '0 4px 20px -4px hsl(35 91% 51% / 0.15)',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-background text-foreground">
+    <!-- Header -->
+    <header class="bg-background shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-gradient-primary rounded-full flex items-center justify-center">
+                        <span class="text-primary-foreground font-bold text-sm">S</span>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-foreground">Sri Bharat</h1>
+                        <p class="text-xs text-muted-foreground">Member of Parliament</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link text-foreground hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg transition-colors duration-200 text-sm font-medium">Home</a>
+                    <a href="about.html" class="nav-link text-foreground hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg transition-colors duration-200 text-sm font-medium">About</a>
+                    <a href="constituency.html" class="nav-link text-foreground hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg transition-colors duration-200 text-sm font-medium">My constituency</a>
+                    <a href="work-impact.html" class="nav-link text-foreground hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg transition-colors duration-200 text-sm font-medium">Work & Impact</a>
+                    <a href="news.html" class="nav-link text-foreground hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg transition-colors duration-200 text-sm font-medium">News</a>
+                    <a href="media-gallery.html" class="nav-link text-foreground hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg transition-colors duration-200 text-sm font-medium">Media gallery</a>
+                    <a href="connect-engage.html" class="nav-link bg-primary text-primary-foreground px-3 py-2 rounded-lg transition-colors duration-200 text-sm font-medium">Connect & Engage</a>
+                    <a href="events.html" class="nav-link text-foreground hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg transition-colors duration-200 text-sm font-medium">Events</a>
+                    <a href="contact.html" class="nav-link text-foreground hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg transition-colors duration-200 text-sm font-medium">Contact</a>
+                </nav>
+
+                <!-- Desktop Contact Button -->
+                <div class="hidden md:block">
+                    <button class="bg-gradient-primary hover:opacity-90 text-primary-foreground px-6 py-2 rounded-lg font-medium transition-opacity">
+                        Contact Us
+                    </button>
+                </div>
+
+                <!-- Mobile menu button -->
+                <button class="md:hidden" id="mobile-menu-button" aria-label="Toggle menu">
+                    <svg class="w-6 h-6" id="menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                    <svg class="w-6 h-6 hidden" id="close-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden py-4 border-t border-border hidden">
+                <nav class="flex flex-col space-y-4">
+                    <a href="index.html" class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">Home</a>
+                    <a href="about.html" class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">About</a>
+                    <a href="constituency.html" class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">My constituency</a>
+                    <a href="work-impact.html" class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">Work & Impact</a>
+                    <a href="news.html" class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">News</a>
+                    <a href="media-gallery.html" class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">Media gallery</a>
+                    <a href="connect-engage.html" class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">Connect & Engage</a>
+                    <a href="events.html" class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">Events</a>
+                    <a href="contact.html" class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-primary py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-primary-foreground mb-4">
+                Connect & Engage
+            </h1>
+            <p class="text-xl text-primary-foreground/90 max-w-3xl mx-auto mb-8">
+                Your voice matters. Engage with us through suggestions, polls, town halls, and community groups. Together, we build a stronger democracy.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="document.getElementById('suggestions').scrollIntoView({behavior: 'smooth'})" 
+                        class="bg-primary-foreground text-primary px-8 py-3 rounded-lg font-semibold hover:bg-primary-foreground/90 transition-colors">
+                    Submit Suggestion
+                </button>
+                <button onclick="document.getElementById('polls').scrollIntoView({behavior: 'smooth'})" 
+                        class="border-2 border-primary-foreground text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-primary-foreground hover:text-primary transition-colors">
+                    Vote in Polls
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Public Suggestions Section -->
+    <section id="suggestions" class="py-16 bg-background">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    Public Suggestions
+                </h2>
+                <p class="text-muted-foreground max-w-2xl mx-auto">
+                    Share your ideas and suggestions for community improvement. Track your submission and see how we're addressing public concerns.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Suggestion Form -->
+                <div class="bg-card rounded-2xl p-8 shadow-card">
+                    <h3 class="text-xl font-semibold text-foreground mb-6">Submit Your Suggestion</h3>
+                    <form id="suggestion-form">
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-2">Full Name *</label>
+                                <input type="text" id="suggester-name" required class="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-2">Email Address *</label>
+                                <input type="email" id="suggester-email" required class="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-2">Phone Number</label>
+                                <input type="tel" id="suggester-phone" class="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-2">Category *</label>
+                                <select id="suggestion-category" required class="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                                    <option value="">Select Category</option>
+                                    <option value="healthcare">Healthcare</option>
+                                    <option value="education">Education</option>
+                                    <option value="infrastructure">Infrastructure</option>
+                                    <option value="agriculture">Agriculture</option>
+                                    <option value="employment">Employment</option>
+                                    <option value="environment">Environment</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-2">Subject *</label>
+                                <input type="text" id="suggestion-subject" required class="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Brief description of your suggestion">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-2">Detailed Suggestion *</label>
+                                <textarea id="suggestion-details" required rows="5" class="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Please provide detailed information about your suggestion"></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-2">Priority Level</label>
+                                <select id="suggestion-priority" class="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                                    <option value="low">Low</option>
+                                    <option value="medium" selected>Medium</option>
+                                    <option value="high">High</option>
+                                    <option value="urgent">Urgent</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="w-full bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors mt-6">
+                            Submit Suggestion
+                        </button>
+                    </form>
+
+                    <!-- Success Message -->
+                    <div id="suggestion-success" class="hidden mt-4 p-4 bg-green-100 text-green-800 rounded-lg">
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/>
+                            </svg>
+                            <div>
+                                <p class="font-semibold">Suggestion submitted successfully!</p>
+                                <p class="text-sm">Tracking ID: <span id="tracking-id" class="font-mono bg-green-200 px-2 py-1 rounded"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Track Suggestions -->
+                <div class="space-y-6">
+                    <div class="bg-card rounded-2xl p-8 shadow-card">
+                        <h3 class="text-xl font-semibold text-foreground mb-6">Track Your Suggestion</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-2">Tracking ID</label>
+                                <div class="flex space-x-2">
+                                    <input type="text" id="tracking-search" placeholder="Enter your tracking ID" class="flex-1 px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                                    <button id="track-btn" class="bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors">
+                                        Track
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tracking Result -->
+                        <div id="tracking-result" class="hidden mt-6 p-4 bg-secondary rounded-lg">
+                            <h4 class="font-semibold text-foreground mb-3">Suggestion Status</h4>
+                            <div id="suggestion-info">
+                                <!-- Dynamic content will be inserted here -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Suggestions -->
+                    <div class="bg-card rounded-2xl p-8 shadow-card">
+                        <h3 class="text-xl font-semibold text-foreground mb-6">Recent Public Suggestions</h3>
+                        <div class="space-y-4" id="recent-suggestions">
+                            <!-- Dynamic content will be inserted here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real-time Polls Section -->
+    <section id="polls" class="py-16 bg-secondary/30">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    Real-time Polls
+                </h2>
+                <p class="text-muted-foreground max-w-2xl mx-auto">
+                    Participate in community polls and see live results. Your opinion shapes our policy decisions and community initiatives.
+                </p>
+            </div>
+
+            <!-- Active Poll -->
+            <div class="bg-card rounded-2xl p-8 shadow-card mb-8">
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="text-xl font-semibold text-foreground">Current Poll</h3>
+                    <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Active</span>
+                </div>
+
+                <div id="current-poll">
+                    <h4 class="text-lg font-medium text-foreground mb-6">What should be the top priority for infrastructure development in our constituency?</h4>
+                    
+                    <div class="space-y-4 mb-6">
+                        <div class="poll-option" data-option="roads">
+                            <div class="flex items-center justify-between p-4 border border-border rounded-lg cursor-pointer hover:bg-secondary/50 transition-colors">
+                                <div class="flex items-center space-x-3">
+                                    <input type="radio" name="poll" value="roads" class="w-4 h-4 text-primary">
+                                    <span class="text-foreground">Road Construction & Maintenance</span>
+                                </div>
+                                <span class="poll-percentage text-muted-foreground" data-votes="45">45%</span>
+                            </div>
+                            <div class="poll-bar mt-2 h-2 bg-border rounded-full">
+                                <div class="poll-progress h-full bg-primary rounded-full transition-all duration-500" style="width: 45%"></div>
+                            </div>
+                        </div>
+
+                        <div class="poll-option" data-option="water">
+                            <div class="flex items-center justify-between p-4 border border-border rounded-lg cursor-pointer hover:bg-secondary/50 transition-colors">
+                                <div class="flex items-center space-x-3">
+                                    <input type="radio" name="poll" value="water" class="w-4 h-4 text-primary">
+                                    <span class="text-foreground">Water Supply & Sanitation</span>
+                                </div>
+                                <span class="poll-percentage text-muted-foreground" data-votes="32">32%</span>
+                            </div>
+                            <div class="poll-bar mt-2 h-2 bg-border rounded-full">
+                                <div class="poll-progress h-full bg-primary rounded-full transition-all duration-500" style="width: 32%"></div>
+                            </div>
+                        </div>
+
+                        <div class="poll-option" data-option="electricity">
+                            <div class="flex items-center justify-between p-4 border border-border rounded-lg cursor-pointer hover:bg-secondary/50 transition-colors">
+                                <div class="flex items-center space-x-3">
+                                    <input type="radio" name="poll" value="electricity" class="w-4 h-4 text-primary">
+                                    <span class="text-foreground">Electricity & Power Grid</span>
+                                </div>
+                                <span class="poll-percentage text-muted-foreground" data-votes="23">23%</span>
+                            </div>
+                            <div class="poll-bar mt-2 h-2 bg-border rounded-full">
+                                <div class="poll-progress h-full bg-primary rounded-full transition-all duration-500" style="width: 23%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <div class="text-sm text-muted-foreground">
+                            Total Votes: <span id="total-votes">1,247</span> • Ends: March 31, 2024
+                        </div>
+                        <button id="vote-btn" class="bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors">
+                            Cast Vote
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Poll History -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-card rounded-2xl p-6 shadow-card">
+                    <h3 class="text-lg font-semibold text-foreground mb-4">Previous Poll Results</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-medium text-foreground">Healthcare Service Improvement</h4>
+                            <p class="text-sm text-muted-foreground mb-2">Mobile health clinics won with 58% of votes</p>
+                            <div class="flex items-center space-x-2 text-xs text-muted-foreground">
+                                <span>2,156 votes</span>
+                                <span>•</span>
+                                <span>Completed March 15, 2024</span>
+                            </div>
+                        </div>
+
+                        <div class="border-l-4 border-blue-500 pl-4">
+                            <h4 class="font-medium text-foreground">Education Technology Priority</h4>
+                            <p class="text-sm text-muted-foreground mb-2">Digital classrooms selected by 62% of voters</p>
+                            <div class="flex items-center space-x-2 text-xs text-muted-foreground">
+                                <span>1,889 votes</span>
+                                <span>•</span>
+                                <span>Completed March 1, 2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-card rounded-2xl p-6 shadow-card">
+                    <h3 class="text-lg font-semibold text-foreground mb-4">Upcoming Polls</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-orange-500 pl-4">
+                            <h4 class="font-medium text-foreground">Agricultural Support Programs</h4>
+                            <p class="text-sm text-muted-foreground mb-2">Which farming support initiative should we prioritize?</p>
+                            <div class="flex items-center space-x-2 text-xs text-muted-foreground">
+                                <span>Starts April 1, 2024</span>
+                                <span>•</span>
+                                <span>7 days duration</span>
+                            </div>
+                        </div>
+
+                        <div class="border-l-4 border-purple-500 pl-4">
+                            <h4 class="font-medium text-foreground">Youth Development Focus</h4>
+                            <p class="text-sm text-muted-foreground mb-2">What skills training programs are most needed?</p>
+                            <div class="flex items-center space-x-2 text-xs text-muted-foreground">
+                                <span>Starts April 15, 2024</span>
+                                <span>•</span>
+                                <span>10 days duration</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Town Hall Events -->
+    <section id="town-halls" class="py-16 bg-background">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    Town Hall Events
+                </h2>
+                <p class="text-muted-foreground max-w-2xl mx-auto">
+                    Join our town hall meetings for direct dialogue and community discussions. RSVP for upcoming events and engage face-to-face.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Upcoming Town Hall -->
+                <div class="lg:col-span-2">
+                    <div class="bg-card rounded-2xl p-8 shadow-card">
+                        <div class="flex items-start justify-between mb-6">
+                            <div>
+                                <div class="flex items-center space-x-2 mb-2">
+                                    <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Upcoming</span>
+                                    <span class="text-muted-foreground text-sm">Available Seats: 85/150</span>
+                                </div>
+                                <h3 class="text-2xl font-semibold text-foreground mb-2">Community Development Discussion</h3>
+                                <p class="text-muted-foreground mb-4">Join us for an open discussion on upcoming development projects, budget allocation, and community priorities for 2024-25.</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                                    <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-muted-foreground">Date & Time</p>
+                                    <p class="font-medium text-foreground">March 25, 2024 at 6:00 PM</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center">
+                                    <svg class="w-5 h-5 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-muted-foreground">Venue</p>
+                                    <p class="font-medium text-foreground">Community Center Hall, Main Road</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                                    <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <polyline points="12,6 12,12 16,14"></polyline>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-muted-foreground">Duration</p>
+                                    <p class="font-medium text-foreground">2 hours (6:00 PM - 8:00 PM)</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
+                                    <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-muted-foreground">Capacity</p>
+                                    <p class="font-medium text-foreground">150 attendees</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- RSVP Form -->
+                        <div class="bg-secondary/50 rounded-lg p-6">
+                            <h4 class="font-semibold text-foreground mb-4">RSVP for this Event</h4>
+                            <form id="rsvp-form" class="space-y-4">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-sm font-medium text-foreground mb-2">Full Name *</label>
+                                        <input type="text" id="rsvp-name" required class="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-foreground mb-2">Email Address *</label>
+                                        <input type="email" id="rsvp-email" required class="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-sm font-medium text-foreground mb-2">Phone Number</label>
+                                        <input type="tel" id="rsvp-phone" class="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-foreground mb-2">Number of Attendees</label>
+                                        <select id="rsvp-attendees" class="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                                            <option value="1">1 person</option>
+                                            <option value="2">2 people</option>
+                                            <option value="3">3 people</option>
+                                            <option value="4">4 people</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-foreground mb-2">Questions/Topics you'd like to discuss</label>
+                                    <textarea id="rsvp-topics" rows="3" class="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Optional: Let us know what topics you're interested in discussing"></textarea>
+                                </div>
+                                <button type="submit" class="bg-primary text-primary-foreground px-8 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors">
+                                    Confirm RSVP
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Calendar & Past Events -->
+                <div class="space-y-6">
+                    <div class="bg-card rounded-2xl p-6 shadow-card">
+                        <h3 class="text-lg font-semibold text-foreground mb-4">Upcoming Events Calendar</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center space-x-3 p-3 bg-secondary/30 rounded-lg">
+                                <div class="text-center">
+                                    <div class="text-lg font-bold text-foreground">25</div>
+                                    <div class="text-xs text-muted-foreground">MAR</div>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-medium text-foreground text-sm">Community Development</p>
+                                    <p class="text-xs text-muted-foreground">6:00 PM - Community Center</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center space-x-3 p-3 hover:bg-secondary/30 rounded-lg cursor-pointer">
+                                <div class="text-center">
+                                    <div class="text-lg font-bold text-foreground">08</div>
+                                    <div class="text-xs text-muted-foreground">APR</div>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-medium text-foreground text-sm">Youth Employment Forum</p>
+                                    <p class="text-xs text-muted-foreground">4:00 PM - District Hall</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center space-x-3 p-3 hover:bg-secondary/30 rounded-lg cursor-pointer">
+                                <div class="text-center">
+                                    <div class="text-lg font-bold text-foreground">22</div>
+                                    <div class="text-xs text-muted-foreground">APR</div>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-medium text-foreground text-sm">Healthcare Q&A Session</p>
+                                    <p class="text-xs text-muted-foreground">5:30 PM - Medical College</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-card rounded-2xl p-6 shadow-card">
+                        <h3 class="text-lg font-semibold text-foreground mb-4">Past Town Halls</h3>
+                        <div class="space-y-3">
+                            <div class="border-b border-border pb-3">
+                                <p class="font-medium text-foreground text-sm">Education Infrastructure Review</p>
+                                <p class="text-xs text-muted-foreground mb-1">March 10, 2024 • 156 attendees</p>
+                                <p class="text-xs text-muted-foreground">Discussed school modernization and digital learning initiatives</p>
+                            </div>
+
+                            <div class="border-b border-border pb-3">
+                                <p class="font-medium text-foreground text-sm">Water Supply Solutions</p>
+                                <p class="text-xs text-muted-foreground mb-1">February 28, 2024 • 203 attendees</p>
+                                <p class="text-xs text-muted-foreground">Community feedback on water distribution and quality improvement</p>
+                            </div>
+
+                            <div>
+                                <p class="font-medium text-foreground text-sm">Agricultural Support Programs</p>
+                                <p class="text-xs text-muted-foreground mb-1">February 15, 2024 • 178 attendees</p>
+                                <p class="text-xs text-muted-foreground">Farmer welfare schemes and crop insurance discussions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Groups -->
+    <section id="community-groups" class="py-16 bg-secondary/30">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    Community Groups
+                </h2>
+                <p class="text-muted-foreground max-w-2xl mx-auto">
+                    Join our active community groups for real-time updates, discussions, and direct communication with fellow constituents.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- WhatsApp Groups -->
+                <div class="bg-card rounded-2xl p-6 shadow-card">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                            <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-foreground">WhatsApp Groups</h3>
+                            <p class="text-sm text-muted-foreground">Real-time updates and discussions</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="border border-border rounded-lg p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <h4 class="font-medium text-foreground">General Updates</h4>
+                                <span class="text-xs text-muted-foreground">1,247 members</span>
+                            </div>
+                            <p class="text-sm text-muted-foreground mb-3">Official announcements and general constituency updates</p>
+                            <button class="w-full bg-green-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-green-700 transition-colors">
+                                Join Group
+                            </button>
+                        </div>
+
+                        <div class="border border-border rounded-lg p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <h4 class="font-medium text-foreground">Healthcare Support</h4>
+                                <span class="text-xs text-muted-foreground">856 members</span>
+                            </div>
+                            <p class="text-sm text-muted-foreground mb-3">Health-related updates, medical camp info, and support</p>
+                            <button class="w-full bg-green-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-green-700 transition-colors">
+                                Join Group
+                            </button>
+                        </div>
+
+                        <div class="border border-border rounded-lg p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <h4 class="font-medium text-foreground">Education Forum</h4>
+                                <span class="text-xs text-muted-foreground">692 members</span>
+                            </div>
+                            <p class="text-sm text-muted-foreground mb-3">Educational opportunities, scholarships, and academic support</p>
+                            <button class="w-full bg-green-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-green-700 transition-colors">
+                                Join Group
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Telegram Channels -->
+                <div class="bg-card rounded-2xl p-6 shadow-card">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                            <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="m9.417 15.181-.397-.398c-.439-.44-.439-1.154 0-1.594l.398-.398c.439-.44 1.153-.44 1.593 0l.401.402L16.748 8.857c.439-.44 1.154-.44 1.594 0l.398.398c.439.44.439 1.154 0 1.594l-6.736 6.736c-.22.22-.512.33-.803.33s-.583-.11-.803-.33l-1.593-1.593c-.44-.44-.44-1.154 0-1.594l.398-.398c.439-.44 1.153-.44 1.593 0l.401.402.796.796zm13.021-3.148l-6.15 6.15.796.796c.44.44.44 1.154 0 1.594l-.398.398c-.439.44-1.153.44-1.593 0l-1.593-1.593c-.44-.44-.44-1.154 0-1.594l.398-.398c.439-.44 1.153-.44 1.593 0l.401.402.796.796 6.15-6.15c.439-.44 1.153-.44 1.593 0l.398.398c.439.44.439 1.154 0 1.594z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-foreground">Telegram Channels</h3>
+                            <p class="text-sm text-muted-foreground">Broadcast channels for official updates</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="border border-border rounded-lg p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <h4 class="font-medium text-foreground">Official Announcements</h4>
+                                <span class="text-xs text-muted-foreground">3,421 subscribers</span>
+                            </div>
+                            <p class="text-sm text-muted-foreground mb-3">Official government announcements and policy updates</p>
+                            <button class="w-full bg-blue-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors">
+                                Join Channel
+                            </button>
+                        </div>
+
+                        <div class="border border-border rounded-lg p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <h4 class="font-medium text-foreground">Development Updates</h4>
+                                <span class="text-xs text-muted-foreground">2,156 subscribers</span>
+                            </div>
+                            <p class="text-sm text-muted-foreground mb-3">Infrastructure projects and development progress</p>
+                            <button class="w-full bg-blue-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors">
+                                Join Channel
+                            </button>
+                        </div>
+
+                        <div class="border border-border rounded-lg p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <h4 class="font-medium text-foreground">Event Notifications</h4>
+                                <span class="text-xs text-muted-foreground">1,889 subscribers</span>
+                            </div>
+                            <p class="text-sm text-muted-foreground mb-3">Event reminders, meeting schedules, and program alerts</p>
+                            <button class="w-full bg-blue-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors">
+                                Join Channel
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Facebook Groups -->
+                <div class="bg-card rounded-2xl p-6 shadow-card">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                            <svg class="w-6 h-6 text-blue-700" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-foreground">Facebook Groups</h3>
+                            <p class="text-sm text-muted-foreground">Community discussions and networking</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="border border-border rounded-lg p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <h4 class="font-medium text-foreground">Constituency Connect</h4>
+                                <span class="text-xs text-muted-foreground">5,678 members</span>
+                            </div>
+                            <p class="text-sm text-muted-foreground mb-3">Main community group for discussions and networking</p>
+                            <button class="w-full bg-blue-700 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-800 transition-colors">
+                                Join Group
+                            </button>
+                        </div>
+
+                        <div class="border border-border rounded-lg p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <h4 class="font-medium text-foreground">Business Network</h4>
+                                <span class="text-xs text-muted-foreground">1,234 members</span>
+                            </div>
+                            <p class="text-sm text-muted-foreground mb-3">Local business owners and entrepreneurs networking</p>
+                            <button class="w-full bg-blue-700 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-800 transition-colors">
+                                Join Group
+                            </button>
+                        </div>
+
+                        <div class="border border-border rounded-lg p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <h4 class="font-medium text-foreground">Youth Engagement</h4>
+                                <span class="text-xs text-muted-foreground">2,567 members</span>
+                            </div>
+                            <p class="text-sm text-muted-foreground mb-3">Platform for young citizens to engage and participate</p>
+                            <button class="w-full bg-blue-700 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-800 transition-colors">
+                                Join Group
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Community Guidelines -->
+            <div class="mt-12 bg-card rounded-2xl p-8 shadow-card">
+                <h3 class="text-xl font-semibold text-foreground mb-6">Community Guidelines</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-medium text-foreground mb-3">✅ Do's</h4>
+                        <ul class="space-y-2 text-sm text-muted-foreground">
+                            <li>• Be respectful and courteous in all communications</li>
+                            <li>• Share constructive feedback and suggestions</li>
+                            <li>• Report issues and concerns promptly</li>
+                            <li>• Participate actively in community discussions</li>
+                            <li>• Verify information before sharing</li>
+                            <li>• Support fellow community members</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-foreground mb-3">❌ Don'ts</h4>
+                        <ul class="space-y-2 text-sm text-muted-foreground">
+                            <li>• Share false or misleading information</li>
+                            <li>• Use offensive or inappropriate language</li>
+                            <li>• Promote personal business interests</li>
+                            <li>• Share personal information of others</li>
+                            <li>• Spam or send irrelevant content</li>
+                            <li>• Engage in political arguments or debates</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-dark text-primary-foreground py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- About Section -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+                            <span class="text-primary-foreground font-bold">S</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Sri Bharat</h3>
+                            <p class="text-sm text-primary-foreground/80">Member of Parliament</p>
+                        </div>
+                    </div>
+                    <p class="text-primary-foreground/80 mb-6 max-w-md">
+                        Dedicated to comprehensive development and serving the people with transparency, accountability, and unwavering commitment to progress.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Home</a></li>
+                        <li><a href="about.html" class="text-primary-foreground/80 hover:text-primary-foreground transition-colors">About</a></li>
+                        <li><a href="#suggestions" class="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Submit Suggestions</a></li>
+                        <li><a href="#polls" class="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Participate in Polls</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Contact Info</h4>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                            <span class="text-primary-foreground/80">+91 9876543210</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 7.89a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <span class="text-primary-foreground/80">office@sribharat.gov.in</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-primary-foreground/20 pt-8 mt-12 text-center">
+                <p class="text-primary-foreground/80 text-sm">
+                    © 2024 Sri Bharat. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="connect-engage.js"></script>
+</body>
+
+</html>
