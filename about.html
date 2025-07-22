@@ -4,16 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Sri Bharat - Member of Parliament</title>
-    <meta name="description" content="Learn about Sri Bharat's background, values, and vision for comprehensive development">
-    <meta name="author" content="Sri Bharat">
-
+    <title>About - Sri Bharat</title>
+    <meta name="description" content="Learn more about Sri Bharat's background, experience, and commitment to public service">
+    
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-
+    
     <!-- Custom Styles -->
     <link rel="stylesheet" href="styles.css">
-
+    
     <!-- Tailwind Config -->
     <script>
         tailwind.config = {
@@ -65,28 +64,20 @@
 
                 <!-- Desktop Navigation -->
                 <nav class="hidden md:flex items-center space-x-8">
-                    <a href="index.html"
-                        class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium">Home</a>
-                    <a href="about.html"
-                        class="text-primary font-medium transition-colors duration-200 text-sm">About
-                        Us</a>
-                    <a href="#specialization"
-                        class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium">Our
-                        Specialization</a>
-                    <a href="#why-fought"
-                        class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium">Why
-                        I fought?</a>
-                    <a href="#news"
-                        class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium">News
-                        & Articles</a>
-                    <a href="#files"
-                        class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium">Files</a>
+                    <a href="index.html" class="nav-link text-foreground hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg transition-colors duration-200 text-sm font-medium">Home</a>
+                    <a href="#about" class="nav-link bg-primary text-primary-foreground px-3 py-2 rounded-lg transition-colors duration-200 text-sm font-medium">About</a>
+                    <a href="constituency.html" class="nav-link text-foreground hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg transition-colors duration-200 text-sm font-medium">My constituency</a>
+                    <a href="#work-impact" class="nav-link text-foreground hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg transition-colors duration-200 text-sm font-medium">Work & Impact</a>
+                    <a href="#news" class="nav-link text-foreground hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg transition-colors duration-200 text-sm font-medium">News</a>
+                    <a href="#media-gallery" class="nav-link text-foreground hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg transition-colors duration-200 text-sm font-medium">Media gallery</a>
+                    <a href="#connect-engage" class="nav-link text-foreground hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg transition-colors duration-200 text-sm font-medium">Connect & Engage</a>
+                    <a href="#events" class="nav-link text-foreground hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg transition-colors duration-200 text-sm font-medium">Events</a>
+                    <a href="#contact" class="nav-link text-foreground hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg transition-colors duration-200 text-sm font-medium">Contact</a>
                 </nav>
 
                 <!-- Desktop Contact Button -->
                 <div class="hidden md:block">
-                    <button
-                        class="bg-gradient-primary hover:opacity-90 text-primary-foreground px-6 py-2 rounded-lg font-medium transition-opacity">
+                    <button class="bg-gradient-primary hover:opacity-90 text-primary-foreground px-6 py-2 rounded-lg font-medium transition-opacity">
                         Contact Us
                     </button>
                 </div>
@@ -94,12 +85,10 @@
                 <!-- Mobile menu button -->
                 <button class="md:hidden" id="mobile-menu-button" aria-label="Toggle menu">
                     <svg class="w-6 h-6" id="menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16M4 18h16"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
                     <svg class="w-6 h-6 hidden" id="close-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
-                        </path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                     </svg>
                 </button>
             </div>
@@ -107,825 +96,56 @@
             <!-- Mobile Navigation -->
             <div id="mobile-menu" class="md:hidden py-4 border-t border-border hidden">
                 <nav class="flex flex-col space-y-4">
-                    <a href="index.html"
-                        class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">Home</a>
-                    <a href="about.html"
-                        class="text-primary font-medium transition-colors duration-200 text-sm px-2 py-1">About
-                        Us</a>
-                    <a href="#specialization"
-                        class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">Our
-                        Specialization</a>
-                    <a href="#why-fought"
-                        class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">Why
-                        I fought?</a>
-                    <a href="#news"
-                        class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">News
-                        & Articles</a>
-                    <a href="#files"
-                        class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">Files</a>
-                    <button
-                        class="bg-gradient-primary hover:opacity-90 text-primary-foreground w-fit mx-2 mt-4 px-6 py-2 rounded-lg font-medium transition-opacity">
-                        Contact Us
-                    </button>
+                    <a href="index.html" class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">Home</a>
+                    <a href="#about" class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">About</a>
+                    <a href="constituency.html" class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">My constituency</a>
+                    <a href="#work-impact" class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">Work & Impact</a>
+                    <a href="#news" class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">News</a>
+                    <a href="#media-gallery" class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">Media gallery</a>
+                    <a href="#connect-engage" class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">Connect & Engage</a>
+                    <a href="#events" class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">Events</a>
+                    <a href="#contact" class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">Contact</a>
                 </nav>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="bg-gradient-primary py-20">
-        <div class="container mx-auto px-4">
-            <div class="text-center">
-                <div class="w-32 h-32 bg-primary-foreground rounded-full flex items-center justify-center mx-auto mb-8 shadow-elegant">
-                    <span class="text-5xl font-bold text-primary">SB</span>
-                </div>
-                <h1 class="text-4xl md:text-6xl font-bold text-primary-foreground mb-4">
-                    About Sri Bharat
-                </h1>
-                <p class="text-xl text-primary-foreground/90 max-w-3xl mx-auto">
-                    Dedicated to serving the people with integrity, transparency, and unwavering commitment to comprehensive development
-                </p>
-            </div>
+    <section class="bg-gradient-primary py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-primary-foreground mb-4">
+                About Sri Bharat
+            </h1>
+            <p class="text-xl text-primary-foreground/90 max-w-3xl mx-auto">
+                Dedicated public servant committed to comprehensive development, transparent governance, and serving the people with integrity and vision.
+            </p>
         </div>
     </section>
 
-    <!-- Quick Navigation -->
-    <section class="bg-card py-8 sticky top-16 z-40 border-b border-border">
+    <!-- About Content Section -->
+    <section id="about" class="py-16 bg-background">
         <div class="container mx-auto px-4">
-            <nav class="flex flex-wrap justify-center gap-4">
-                <a href="#biography" class="nav-link px-4 py-2 rounded-full text-sm font-medium transition-all">Biography</a>
-                <a href="#timeline" class="nav-link px-4 py-2 rounded-full text-sm font-medium transition-all">Timeline</a>
-                <a href="#values" class="nav-link px-4 py-2 rounded-full text-sm font-medium transition-all">Values</a>
-                <a href="#vision" class="nav-link px-4 py-2 rounded-full text-sm font-medium transition-all">Vision</a>
-                <a href="#testimonials" class="nav-link px-4 py-2 rounded-full text-sm font-medium transition-all">Testimonials</a>
-            </nav>
-        </div>
-    </section>
-
-    <!-- Personal Biography Section -->
-    <section id="biography" class="py-20 bg-background">
-        <div class="container mx-auto px-4">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-bold text-foreground mb-6">Personal Biography</h2>
-                    <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
-                        A journey of dedication, service, and unwavering commitment to the people
-                    </p>
-                </div>
-
-                <div class="grid lg:grid-cols-2 gap-16 items-center mb-20">
-                    <div>
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=600&fit=crop&crop=face" 
-                             alt="Sri Bharat" class="w-full rounded-2xl shadow-elegant">
-                    </div>
-                    <div>
-                        <h3 class="text-3xl font-bold text-foreground mb-6">Early Life & Foundation</h3>
-                        <p class="text-muted-foreground mb-6 leading-relaxed">
-                            Born into a family that valued education and public service, Sri Bharat's journey began in a small village where he witnessed firsthand the challenges faced by rural communities. This early exposure to grassroots issues shaped his worldview and instilled a deep commitment to social justice and development.
-                        </p>
-                        <p class="text-muted-foreground leading-relaxed">
-                            His formative years were marked by academic excellence and active participation in student leadership roles, laying the foundation for his future political career.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Education Section -->
-                <div class="mb-20">
-                    <h3 class="text-3xl font-bold text-foreground mb-12 text-center">Educational Background</h3>
-                    <div class="grid md:grid-cols-3 gap-8">
-                        <div class="bg-card rounded-2xl p-8 shadow-card hover:shadow-elegant transition-all">
-                            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
-                                <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-                                </svg>
-                            </div>
-                            <h4 class="text-xl font-semibold text-foreground mb-3">Bachelor's Degree</h4>
-                            <p class="text-muted-foreground mb-2">Political Science & Economics</p>
-                            <p class="text-sm text-muted-foreground">Delhi University • 1995-1998</p>
-                            <p class="text-sm text-primary font-medium mt-2">First Class with Honors</p>
-                        </div>
-
-                        <div class="bg-card rounded-2xl p-8 shadow-card hover:shadow-elegant transition-all">
-                            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
-                                <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-                                </svg>
-                            </div>
-                            <h4 class="text-xl font-semibold text-foreground mb-3">Master's Degree</h4>
-                            <p class="text-muted-foreground mb-2">Public Administration</p>
-                            <p class="text-sm text-muted-foreground">Jawaharlal Nehru University • 1998-2000</p>
-                            <p class="text-sm text-primary font-medium mt-2">Gold Medalist</p>
-                        </div>
-
-                        <div class="bg-card rounded-2xl p-8 shadow-card hover:shadow-elegant transition-all">
-                            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
-                                <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
-                                </svg>
-                            </div>
-                            <h4 class="text-xl font-semibold text-foreground mb-3">Certification</h4>
-                            <p class="text-muted-foreground mb-2">Leadership in Governance</p>
-                            <p class="text-sm text-muted-foreground">Harvard Kennedy School • 2010</p>
-                            <p class="text-sm text-primary font-medium mt-2">Executive Program</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Career Progression -->
-                <div>
-                    <h3 class="text-3xl font-bold text-foreground mb-12 text-center">Career Progression</h3>
-                    <div class="space-y-8">
-                        <div class="bg-card rounded-2xl p-8 shadow-card">
-                            <div class="flex flex-col md:flex-row md:items-center gap-6">
-                                <div class="md:w-1/4">
-                                    <span class="bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-medium">2020 - Present</span>
-                                </div>
-                                <div class="md:w-3/4">
-                                    <h4 class="text-2xl font-semibold text-foreground mb-3">Member of Parliament</h4>
-                                    <p class="text-muted-foreground mb-4">Representing the constituency with dedication and implementing comprehensive development programs.</p>
-                                    <ul class="text-sm text-muted-foreground space-y-2">
-                                        <li>• Initiated 150+ development projects across healthcare, education, and infrastructure</li>
-                                        <li>• Achieved 95% project completion rate within stipulated timelines</li>
-                                        <li>• Secured ₹500+ crores in central funding for constituency development</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bg-card rounded-2xl p-8 shadow-card">
-                            <div class="flex flex-col md:flex-row md:items-center gap-6">
-                                <div class="md:w-1/4">
-                                    <span class="bg-muted text-muted-foreground px-4 py-2 rounded-full text-sm font-medium">2015 - 2020</span>
-                                </div>
-                                <div class="md:w-3/4">
-                                    <h4 class="text-2xl font-semibold text-foreground mb-3">State Legislative Assembly</h4>
-                                    <p class="text-muted-foreground mb-4">Served as MLA focusing on rural development and social welfare programs.</p>
-                                    <ul class="text-sm text-muted-foreground space-y-2">
-                                        <li>• Championed women empowerment initiatives reaching 25,000+ beneficiaries</li>
-                                        <li>• Established 50+ skill development centers in rural areas</li>
-                                        <li>• Led digital literacy programs covering 100+ villages</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bg-card rounded-2xl p-8 shadow-card">
-                            <div class="flex flex-col md:flex-row md:items-center gap-6">
-                                <div class="md:w-1/4">
-                                    <span class="bg-muted text-muted-foreground px-4 py-2 rounded-full text-sm font-medium">2010 - 2015</span>
-                                </div>
-                                <div class="md:w-3/4">
-                                    <h4 class="text-2xl font-semibold text-foreground mb-3">Social Activist & NGO Leader</h4>
-                                    <p class="text-muted-foreground mb-4">Founded and led grassroots organizations focused on education and healthcare access.</p>
-                                    <ul class="text-sm text-muted-foreground space-y-2">
-                                        <li>• Established 20+ community schools in underserved areas</li>
-                                        <li>• Organized free medical camps serving 10,000+ patients annually</li>
-                                        <li>• Mobilized youth volunteers for community development projects</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Interactive Timeline -->
-    <section id="timeline" class="py-20 bg-secondary/30">
-        <div class="container mx-auto px-4">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-bold text-foreground mb-6">Journey Timeline</h2>
-                    <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
-                        Key milestones that shaped the path to public service
-                    </p>
-                </div>
-
-                <div class="relative">
-                    <!-- Timeline Line -->
-                    <div class="absolute left-1/2 transform -translate-x-1/2 w-1 bg-primary h-full hidden md:block"></div>
-
-                    <!-- Timeline Items -->
-                    <div class="space-y-12">
-                        <!-- Timeline Item 1 -->
-                        <div class="timeline-item flex flex-col md:flex-row items-center" data-year="1975">
-                            <div class="md:w-1/2 md:pr-8 mb-4 md:mb-0">
-                                <div class="bg-card rounded-2xl p-6 shadow-card hover:shadow-elegant transition-all cursor-pointer">
-                                    <h3 class="text-xl font-semibold text-foreground mb-2">Born in Rural Village</h3>
-                                    <p class="text-muted-foreground text-sm mb-3">Early exposure to grassroots challenges</p>
-                                    <p class="text-xs text-muted-foreground">Click to learn more</p>
-                                </div>
-                            </div>
-                            <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-sm z-10 hidden md:flex">
-                                1
-                            </div>
-                            <div class="md:w-1/2 md:pl-8">
-                                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=400&h=250&fit=crop" 
-                                     alt="Rural village" class="w-full h-48 object-cover rounded-xl">
-                            </div>
-                        </div>
-
-                        <!-- Timeline Item 2 -->
-                        <div class="timeline-item flex flex-col md:flex-row-reverse items-center" data-year="1998">
-                            <div class="md:w-1/2 md:pl-8 mb-4 md:mb-0">
-                                <div class="bg-card rounded-2xl p-6 shadow-card hover:shadow-elegant transition-all cursor-pointer">
-                                    <h3 class="text-xl font-semibold text-foreground mb-2">University Graduation</h3>
-                                    <p class="text-muted-foreground text-sm mb-3">First Class Honors in Political Science</p>
-                                    <p class="text-xs text-muted-foreground">Click to learn more</p>
-                                </div>
-                            </div>
-                            <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-sm z-10 hidden md:flex">
-                                2
-                            </div>
-                            <div class="md:w-1/2 md:pr-8">
-                                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&h=250&fit=crop" 
-                                     alt="University graduation" class="w-full h-48 object-cover rounded-xl">
-                            </div>
-                        </div>
-
-                        <!-- Timeline Item 3 -->
-                        <div class="timeline-item flex flex-col md:flex-row items-center" data-year="2010">
-                            <div class="md:w-1/2 md:pr-8 mb-4 md:mb-0">
-                                <div class="bg-card rounded-2xl p-6 shadow-card hover:shadow-elegant transition-all cursor-pointer">
-                                    <h3 class="text-xl font-semibold text-foreground mb-2">Founded NGO</h3>
-                                    <p class="text-muted-foreground text-sm mb-3">Grassroots development initiatives</p>
-                                    <p class="text-xs text-muted-foreground">Click to learn more</p>
-                                </div>
-                            </div>
-                            <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-sm z-10 hidden md:flex">
-                                3
-                            </div>
-                            <div class="md:w-1/2 md:pl-8">
-                                <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=400&h=250&fit=crop" 
-                                     alt="Community service" class="w-full h-48 object-cover rounded-xl">
-                            </div>
-                        </div>
-
-                        <!-- Timeline Item 4 -->
-                        <div class="timeline-item flex flex-col md:flex-row-reverse items-center" data-year="2015">
-                            <div class="md:w-1/2 md:pl-8 mb-4 md:mb-0">
-                                <div class="bg-card rounded-2xl p-6 shadow-card hover:shadow-elegant transition-all cursor-pointer">
-                                    <h3 class="text-xl font-semibold text-foreground mb-2">Elected as MLA</h3>
-                                    <p class="text-muted-foreground text-sm mb-3">First electoral victory with 60% vote share</p>
-                                    <p class="text-xs text-muted-foreground">Click to learn more</p>
-                                </div>
-                            </div>
-                            <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-sm z-10 hidden md:flex">
-                                4
-                            </div>
-                            <div class="md:w-1/2 md:pr-8">
-                                <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=400&h=250&fit=crop" 
-                                     alt="Election victory" class="w-full h-48 object-cover rounded-xl">
-                            </div>
-                        </div>
-
-                        <!-- Timeline Item 5 -->
-                        <div class="timeline-item flex flex-col md:flex-row items-center" data-year="2024">
-                            <div class="md:w-1/2 md:pr-8 mb-4 md:mb-0">
-                                <div class="bg-card rounded-2xl p-6 shadow-card hover:shadow-elegant transition-all cursor-pointer">
-                                    <h3 class="text-xl font-semibold text-foreground mb-2">Historic MP Victory</h3>
-                                    <p class="text-muted-foreground text-sm mb-3">Record-breaking 65.8% vote share</p>
-                                    <p class="text-xs text-muted-foreground">Click to learn more</p>
-                                </div>
-                            </div>
-                            <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-sm z-10 hidden md:flex">
-                                5
-                            </div>
-                            <div class="md:w-1/2 md:pl-8">
-                                <img src="https://images.unsplash.com/photo-1586027492347-b4db2dd8c4c5?w=400&h=250&fit=crop" 
-                                     alt="Victory celebration" class="w-full h-48 object-cover rounded-xl">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Personal Values & Character -->
-    <section id="values" class="py-20 bg-background">
-        <div class="container mx-auto px-4">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-bold text-foreground mb-6">Values & Character</h2>
-                    <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
-                        The principles and beliefs that guide every decision and action
-                    </p>
-                </div>
-
-                <!-- Family Background -->
-                <div class="grid lg:grid-cols-2 gap-16 items-center mb-20">
-                    <div>
-                        <h3 class="text-3xl font-bold text-foreground mb-6">Family Foundation</h3>
-                        <p class="text-muted-foreground mb-6 leading-relaxed">
-                            Raised in a family that believed in the power of education and service to others, Sri Bharat learned early that true success comes from lifting others up. His parents, both teachers, instilled values of integrity, hard work, and compassion.
-                        </p>
-                        <p class="text-muted-foreground mb-6 leading-relaxed">
-                            Married to Dr. Priya Bharat, a pediatrician who shares his commitment to public service, they have two children who are being raised with the same values of service and social responsibility.
-                        </p>
-                        <div class="bg-primary/10 rounded-xl p-6">
-                            <p class="text-foreground font-medium italic">
-                                "Family is not just about blood relations, but about the community we serve and the legacy we leave for future generations."
-                            </p>
-                        </div>
-                    </div>
-                    <div>
-                        <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=600&h=400&fit=crop" 
-                             alt="Family values" class="w-full rounded-2xl shadow-elegant">
-                    </div>
-                </div>
-
-                <!-- Core Values -->
-                <div class="mb-20">
-                    <h3 class="text-3xl font-bold text-foreground mb-12 text-center">Core Values</h3>
-                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        <div class="text-center">
-                            <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                                <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                                </svg>
-                            </div>
-                            <h4 class="text-xl font-semibold text-foreground mb-3">Integrity</h4>
-                            <p class="text-muted-foreground text-sm">Unwavering commitment to honesty and ethical conduct in all aspects of public service</p>
-                        </div>
-
-                        <div class="text-center">
-                            <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                                <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                                </svg>
-                            </div>
-                            <h4 class="text-xl font-semibold text-foreground mb-3">Compassion</h4>
-                            <p class="text-muted-foreground text-sm">Deep empathy for the struggles of others and dedication to alleviating suffering</p>
-                        </div>
-
-                        <div class="text-center">
-                            <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                                <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                                </svg>
-                            </div>
-                            <h4 class="text-xl font-semibold text-foreground mb-3">Unity</h4>
-                            <p class="text-muted-foreground text-sm">Building bridges across communities and fostering inclusive development for all</p>
-                        </div>
-
-                        <div class="text-center">
-                            <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                                <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                                </svg>
-                            </div>
-                            <h4 class="text-xl font-semibold text-foreground mb-3">Progress</h4>
-                            <p class="text-muted-foreground text-sm">Relentless pursuit of innovation and development for sustainable growth</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Personal Interests -->
-                <div class="mb-20">
-                    <h3 class="text-3xl font-bold text-foreground mb-12 text-center">Personal Interests</h3>
-                    <div class="grid md:grid-cols-3 gap-8">
-                        <div class="bg-card rounded-2xl p-8 shadow-card hover:shadow-elegant transition-all">
-                            <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=200&fit=crop" 
-                                 alt="Reading books" class="w-full h-40 object-cover rounded-xl mb-6">
-                            <h4 class="text-xl font-semibold text-foreground mb-3">Literature & Philosophy</h4>
-                            <p class="text-muted-foreground text-sm">Avid reader of political philosophy, history, and contemporary literature. Believes in the power of knowledge to transform society.</p>
-                        </div>
-
-                        <div class="bg-card rounded-2xl p-8 shadow-card hover:shadow-elegant transition-all">
-                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=200&fit=crop" 
-                                 alt="Sports activities" class="w-full h-40 object-cover rounded-xl mb-6">
-                            <h4 class="text-xl font-semibold text-foreground mb-3">Sports & Fitness</h4>
-                            <p class="text-muted-foreground text-sm">Regular practitioner of yoga and cricket enthusiast. Promotes sports as a tool for youth development and community building.</p>
-                        </div>
-
-                        <div class="bg-card rounded-2xl p-8 shadow-card hover:shadow-elegant transition-all">
-                            <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=200&fit=crop" 
-                                 alt="Community gardening" class="w-full h-40 object-cover rounded-xl mb-6">
-                            <h4 class="text-xl font-semibold text-foreground mb-3">Environmental Conservation</h4>
-                            <p class="text-muted-foreground text-sm">Passionate about sustainable living and environmental protection. Maintains an organic garden and promotes green initiatives.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Meaningful Quotes -->
-                <div class="bg-gradient-primary rounded-3xl p-12 text-center">
-                    <h3 class="text-3xl font-bold text-primary-foreground mb-8">Guiding Philosophy</h3>
-                    <blockquote class="text-2xl md:text-3xl font-medium text-primary-foreground mb-8 italic">
-                        "True leadership is not about being in charge, but about taking care of those in your charge."
-                    </blockquote>
-                    <div class="grid md:grid-cols-2 gap-8 text-primary-foreground/90">
-                        <div class="bg-primary-foreground/10 rounded-xl p-6">
-                            <p class="font-medium mb-2">"Service before self"</p>
-                            <p class="text-sm">The foundation of all public service</p>
-                        </div>
-                        <div class="bg-primary-foreground/10 rounded-xl p-6">
-                            <p class="font-medium mb-2">"Progress through unity"</p>
-                            <p class="text-sm">Collective strength for common goals</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Vision Statement -->
-    <section id="vision" class="py-20 bg-secondary/30">
-        <div class="container mx-auto px-4">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-bold text-foreground mb-6">Vision for the Future</h2>
-                    <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
-                        A comprehensive roadmap for sustainable development and prosperity
-                    </p>
-                </div>
-
-                <!-- Main Vision -->
-                <div class="bg-card rounded-3xl p-12 shadow-elegant mb-16">
-                    <div class="text-center mb-12">
-                        <h3 class="text-3xl font-bold text-foreground mb-6">Our Constituency Vision 2030</h3>
-                        <p class="text-xl text-muted-foreground leading-relaxed">
-                            To transform our constituency into a model of comprehensive development where every citizen has access to quality healthcare, education, and economic opportunities, while preserving our cultural heritage and environmental sustainability.
-                        </p>
-                    </div>
-
-                    <div class="grid md:grid-cols-3 gap-8">
-                        <div class="text-center">
-                            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
-                                </svg>
-                            </div>
-                            <h4 class="text-lg font-semibold text-foreground mb-2">People-Centric</h4>
-                            <p class="text-muted-foreground text-sm">Every policy and project designed with citizen welfare at its core</p>
-                        </div>
-
-                        <div class="text-center">
-                            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                                </svg>
-                            </div>
-                            <h4 class="text-lg font-semibold text-foreground mb-2">Innovation-Driven</h4>
-                            <p class="text-muted-foreground text-sm">Leveraging technology and modern solutions for traditional challenges</p>
-                        </div>
-
-                        <div class="text-center">
-                            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9"></path>
-                                </svg>
-                            </div>
-                            <h4 class="text-lg font-semibold text-foreground mb-2">Sustainable</h4>
-                            <p class="text-muted-foreground text-sm">Development that meets today's needs without compromising the future</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Policy Priorities -->
-                <div class="mb-16">
-                    <h3 class="text-3xl font-bold text-foreground mb-12 text-center">Key Policy Priorities</h3>
-                    <div class="grid lg:grid-cols-2 gap-8">
-                        <div class="space-y-6">
-                            <div class="bg-card rounded-2xl p-8 shadow-card">
-                                <div class="flex items-start space-x-4">
-                                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <h4 class="text-xl font-semibold text-foreground mb-3">Healthcare Excellence</h4>
-                                        <p class="text-muted-foreground mb-4">Establishing world-class medical facilities and ensuring healthcare access for all citizens.</p>
-                                        <ul class="text-sm text-muted-foreground space-y-1">
-                                            <li>• 24/7 emergency medical services in every block</li>
-                                            <li>• Telemedicine connectivity to remote areas</li>
-                                            <li>• Specialized treatment centers for critical care</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="bg-card rounded-2xl p-8 shadow-card">
-                                <div class="flex items-start space-x-4">
-                                    <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <h4 class="text-xl font-semibold text-foreground mb-3">Education Revolution</h4>
-                                        <p class="text-muted-foreground mb-4">Creating a robust education ecosystem from primary to higher education.</p>
-                                        <ul class="text-sm text-muted-foreground space-y-1">
-                                            <li>• Digital classrooms in every school</li>
-                                            <li>• Skill development centers for youth</li>
-                                            <li>• Scholarship programs for higher education</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="bg-card rounded-2xl p-8 shadow-card">
-                                <div class="flex items-start space-x-4">
-                                    <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
-                                        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <h4 class="text-xl font-semibold text-foreground mb-3">Infrastructure Development</h4>
-                                        <p class="text-muted-foreground mb-4">Building modern infrastructure for sustainable economic growth.</p>
-                                        <ul class="text-sm text-muted-foreground space-y-1">
-                                            <li>• Smart city initiatives with IoT integration</li>
-                                            <li>• High-speed internet connectivity</li>
-                                            <li>• Sustainable transportation networks</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="space-y-6">
-                            <div class="bg-card rounded-2xl p-8 shadow-card">
-                                <div class="flex items-start space-x-4">
-                                    <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
-                                        <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2V6"></path>
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <h4 class="text-xl font-semibold text-foreground mb-3">Economic Empowerment</h4>
-                                        <p class="text-muted-foreground mb-4">Creating sustainable employment and entrepreneurship opportunities.</p>
-                                        <ul class="text-sm text-muted-foreground space-y-1">
-                                            <li>• Industrial parks and manufacturing hubs</li>
-                                            <li>• Support for MSMEs and startups</li>
-                                            <li>• Agricultural modernization programs</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="bg-card rounded-2xl p-8 shadow-card">
-                                <div class="flex items-start space-x-4">
-                                    <div class="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center flex-shrink-0">
-                                        <svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <h4 class="text-xl font-semibold text-foreground mb-3">Social Welfare</h4>
-                                        <p class="text-muted-foreground mb-4">Comprehensive social security and welfare programs for all.</p>
-                                        <ul class="text-sm text-muted-foreground space-y-1">
-                                            <li>• Women empowerment and safety initiatives</li>
-                                            <li>• Senior citizen care programs</li>
-                                            <li>• Youth development and sports promotion</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="bg-card rounded-2xl p-8 shadow-card">
-                                <div class="flex items-start space-x-4">
-                                    <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9"></path>
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <h4 class="text-xl font-semibold text-foreground mb-3">Environmental Sustainability</h4>
-                                        <p class="text-muted-foreground mb-4">Protecting our environment for future generations.</p>
-                                        <ul class="text-sm text-muted-foreground space-y-1">
-                                            <li>• Renewable energy adoption programs</li>
-                                            <li>• Waste management and recycling initiatives</li>
-                                            <li>• Water conservation and management</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Vision for India -->
-                <div class="bg-gradient-primary rounded-3xl p-12 text-center">
-                    <h3 class="text-3xl font-bold text-primary-foreground mb-8">Vision for India 2047</h3>
-                    <p class="text-xl text-primary-foreground/90 mb-8 leading-relaxed">
-                        Contributing to India's journey towards becoming a developed nation by 2047, where every citizen enjoys prosperity, dignity, and equal opportunities in a sustainable and inclusive society.
-                    </p>
-                    <div class="grid md:grid-cols-3 gap-6">
-                        <div class="bg-primary-foreground/10 rounded-xl p-6">
-                            <h4 class="text-lg font-semibold text-primary-foreground mb-2">Digital India</h4>
-                            <p class="text-sm text-primary-foreground/80">Technology-enabled governance and services</p>
-                        </div>
-                        <div class="bg-primary-foreground/10 rounded-xl p-6">
-                            <h4 class="text-lg font-semibold text-primary-foreground mb-2">Atmanirbhar Bharat</h4>
-                            <p class="text-sm text-primary-foreground/80">Self-reliant and globally competitive economy</p>
-                        </div>
-                        <div class="bg-primary-foreground/10 rounded-xl p-6">
-                            <h4 class="text-lg font-semibold text-primary-foreground mb-2">Sustainable Development</h4>
-                            <p class="text-sm text-primary-foreground/80">Green growth and environmental protection</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Social Proof & Testimonials -->
-    <section id="testimonials" class="py-20 bg-background">
-        <div class="container mx-auto px-4">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-bold text-foreground mb-6">Testimonials & Endorsements</h2>
-                    <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
-                        Voices of trust and confidence from colleagues, constituents, and community leaders
-                    </p>
-                </div>
-
-                <!-- Political Peers -->
-                <div class="mb-16">
-                    <h3 class="text-3xl font-bold text-foreground mb-12 text-center">Political Colleagues</h3>
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <div class="bg-card rounded-2xl p-8 shadow-card hover:shadow-elegant transition-all">
-                            <div class="flex items-start space-x-4 mb-6">
-                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face" 
-                                     alt="Dr. Rajesh Kumar" class="w-16 h-16 rounded-full object-cover">
-                                <div>
-                                    <h4 class="text-lg font-semibold text-foreground">Dr. Rajesh Kumar</h4>
-                                    <p class="text-sm text-muted-foreground">Former Chief Minister</p>
-                                    <p class="text-xs text-muted-foreground">State Government</p>
-                                </div>
-                            </div>
-                            <blockquote class="text-muted-foreground italic mb-4">
-                                "Sri Bharat's dedication to public service is exemplary. His ability to bridge political differences and focus on development has been instrumental in transforming his constituency. A true leader who puts people before politics."
-                            </blockquote>
-                            <div class="flex text-primary">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                                </svg>
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                                </svg>
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                                </svg>
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                                </svg>
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                                </svg>
-                            </div>
-                        </div>
-
-                        <div class="bg-card rounded-2xl p-8 shadow-card hover:shadow-elegant transition-all">
-                            <div class="flex items-start space-x-4 mb-6">
-                                <img src="https://images.unsplash.com/photo-1494790108755-2616c6d4e6e8?w=80&h=80&fit=crop&crop=face" 
-                                     alt="Smt. Priya Sharma" class="w-16 h-16 rounded-full object-cover">
-                                <div>
-                                    <h4 class="text-lg font-semibold text-foreground">Smt. Priya Sharma</h4>
-                                    <p class="text-sm text-muted-foreground">Member of Parliament</p>
-                                    <p class="text-xs text-muted-foreground">Neighboring Constituency</p>
-                                </div>
-                            </div>
-                            <blockquote class="text-muted-foreground italic mb-4">
-                                "Working alongside Sri Bharat has been inspiring. His collaborative approach and commitment to cross-party cooperation for development initiatives sets a benchmark for all of us in public service."
-                            </blockquote>
-                            <div class="flex text-primary">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                                </svg>
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                                </svg>
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                                </svg>
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                                </svg>
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Community Leaders -->
-                <div class="mb-16">
-                    <h3 class="text-3xl font-bold text-foreground mb-12 text-center">Community Voices</h3>
-                    <div class="grid md:grid-cols-3 gap-8">
-                        <div class="bg-card rounded-2xl p-6 shadow-card hover:shadow-elegant transition-all">
-                            <div class="text-center mb-4">
-                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face" 
-                                     alt="Ramesh Patel" class="w-16 h-16 rounded-full object-cover mx-auto mb-3">
-                                <h4 class="text-lg font-semibold text-foreground">Ramesh Patel</h4>
-                                <p class="text-sm text-muted-foreground">Village Sarpanch</p>
-                            </div>
-                            <blockquote class="text-muted-foreground italic text-sm text-center">
-                                "The water supply project changed our lives completely. Sri Bharat kept his promise and delivered clean water to every household."
-                            </blockquote>
-                        </div>
-
-                        <div class="bg-card rounded-2xl p-6 shadow-card hover:shadow-elegant transition-all">
-                            <div class="text-center mb-4">
-                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face" 
-                                     alt="Dr. Meera Singh" class="w-16 h-16 rounded-full object-cover mx-auto mb-3">
-                                <h4 class="text-lg font-semibold text-foreground">Dr. Meera Singh</h4>
-                                <p class="text-sm text-muted-foreground">School Principal</p>
-                            </div>
-                            <blockquote class="text-muted-foreground italic text-sm text-center">
-                                "The digital classroom initiative has revolutionized education in our area. Students now have access to world-class learning resources."
-                            </blockquote>
-                        </div>
-
-                        <div class="bg-card rounded-2xl p-6 shadow-card hover:shadow-elegant transition-all">
-                            <div class="text-center mb-4">
-                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face" 
-                                     alt="Suresh Kumar" class="w-16 h-16 rounded-full object-cover mx-auto mb-3">
-                                <h4 class="text-lg font-semibold text-foreground">Suresh Kumar</h4>
-                                <p class="text-sm text-muted-foreground">Local Businessman</p>
-                            </div>
-                            <blockquote class="text-muted-foreground italic text-sm text-center">
-                                "The industrial park development has created hundreds of jobs. Our youth no longer need to migrate to cities for employment."
-                            </blockquote>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Awards & Recognition -->
-                <div class="bg-secondary/30 rounded-3xl p-12">
-                    <h3 class="text-3xl font-bold text-foreground mb-12 text-center">Awards & Recognition</h3>
-                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        <div class="text-center">
-                            <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
-                                </svg>
-                            </div>
-                            <h4 class="text-lg font-semibold text-foreground mb-2">Best MP Award</h4>
-                            <p class="text-sm text-muted-foreground">Parliament Excellence</p>
-                            <p class="text-xs text-muted-foreground mt-1">2023</p>
-                        </div>
-
-                        <div class="text-center">
-                            <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                                </svg>
-                            </div>
-                            <h4 class="text-lg font-semibold text-foreground mb-2">Social Service Award</h4>
-                            <p class="text-sm text-muted-foreground">State Government</p>
-                            <p class="text-xs text-muted-foreground mt-1">2022</p>
-                        </div>
-
-                        <div class="text-center">
-                            <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                                </svg>
-                            </div>
-                            <h4 class="text-lg font-semibold text-foreground mb-2">Innovation Leader</h4>
-                            <p class="text-sm text-muted-foreground">Digital India Initiative</p>
-                            <p class="text-xs text-muted-foreground mt-1">2021</p>
-                        </div>
-
-                        <div class="text-center">
-                            <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
-                                </svg>
-                            </div>
-                            <h4 class="text-lg font-semibold text-foreground mb-2">People's Choice</h4>
-                            <p class="text-sm text-muted-foreground">Constituency Survey</p>
-                            <p class="text-xs text-muted-foreground mt-1">2024</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Call to Action -->
-    <section class="py-20 bg-gradient-primary">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
-                    Join the Journey
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    Background & Experience
                 </h2>
-                <p class="text-xl text-primary-foreground/90 mb-8 leading-relaxed">
-                    Together, we can build a stronger, more prosperous future for our constituency and our nation. Your support and participation make all the difference.
+                <p class="text-muted-foreground max-w-2xl mx-auto">
+                    A proven track record of public service, community development, and legislative excellence
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button class="bg-primary-foreground text-primary px-8 py-3 rounded-lg font-semibold hover:bg-primary-foreground/90 transition-colors">
-                        Get Involved
-                    </button>
-                    <button class="border-2 border-primary-foreground text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-primary-foreground hover:text-primary transition-colors">
-                        Contact Office
-                    </button>
+            </div>
+
+            <!-- Content will be dynamically populated or added later -->
+            <div class="text-center py-20">
+                <div class="w-24 h-24 bg-primary rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                    <span class="text-4xl font-bold text-primary-foreground">SB</span>
                 </div>
+                <h3 class="text-2xl font-bold text-foreground mb-4">Sri Bharat</h3>
+                <p class="text-muted-foreground mb-8 max-w-2xl mx-auto">
+                    Member of Parliament dedicated to comprehensive development and serving the people with transparency, accountability, and unwavering commitment to progress.
+                </p>
+                <button class="bg-gradient-primary hover:opacity-90 text-primary-foreground px-8 py-3 rounded-lg font-medium transition-opacity">
+                    Learn More About My Work
+                </button>
             </div>
         </div>
     </section>
@@ -946,121 +166,45 @@
                         </div>
                     </div>
                     <p class="text-primary-foreground/80 mb-6 max-w-md">
-                        Dedicated to comprehensive development and serving the people with transparency,
-                        accountability, and unwavering commitment to progress.
+                        Dedicated to comprehensive development and serving the people with transparency, accountability, and unwavering commitment to progress.
                     </p>
-
-                    <!-- Contact Info -->
-                    <div class="space-y-3">
-                        <div class="flex items-center space-x-3">
-                            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
-                                </path>
-                            </svg>
-                            <span class="text-primary-foreground/80">+91 9876543210</span>
-                        </div>
-                        <div class="flex items-center space-x-3">
-                            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M3 8l7.89 7.89a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
-                                </path>
-                            </svg>
-                            <span class="text-primary-foreground/80">office@sribharat.gov.in</span>
-                        </div>
-                        <div class="flex items-center space-x-3">
-                            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
-                                </path>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                            </svg>
-                            <span class="text-primary-foreground/80">Parliament House, New Delhi</span>
-                        </div>
-                    </div>
                 </div>
 
                 <!-- Quick Links -->
                 <div>
                     <h4 class="text-lg font-semibold mb-6">Quick Links</h4>
                     <ul class="space-y-3">
-                        <li><a href="index.html"
-                                class="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Home</a></li>
-                        <li><a href="#biography"
-                                class="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Biography</a>
-                        </li>
-                        <li><a href="#vision"
-                                class="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Vision</a></li>
-                        <li><a href="#testimonials"
-                                class="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Testimonials</a>
-                        </li>
+                        <li><a href="index.html" class="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Home</a></li>
+                        <li><a href="#about" class="text-primary-foreground/80 hover:text-primary-foreground transition-colors">About</a></li>
+                        <li><a href="constituency.html" class="text-primary-foreground/80 hover:text-primary-foreground transition-colors">My constituency</a></li>
+                        <li><a href="#work-impact" class="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Work & Impact</a></li>
                     </ul>
                 </div>
 
-                <!-- Development Areas -->
+                <!-- Contact Info -->
                 <div>
-                    <h4 class="text-lg font-semibold mb-6">Focus Areas</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#healthcare"
-                                class="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Healthcare</a>
-                        </li>
-                        <li><a href="#education"
-                                class="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Education</a>
-                        </li>
-                        <li><a href="#infrastructure"
-                                class="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Infrastructure</a>
-                        </li>
-                        <li><a href="#agriculture"
-                                class="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Agriculture</a>
-                        </li>
-                    </ul>
+                    <h4 class="text-lg font-semibold mb-6">Contact Info</h4>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                            <span class="text-primary-foreground/80">+91 9876543210</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 7.89a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <span class="text-primary-foreground/80">office@sribharat.gov.in</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Social Links -->
-            <div class="border-t border-primary-foreground/20 pt-8 mt-12">
-                <div class="flex flex-col md:flex-row justify-between items-center">
-                    <div class="flex space-x-6 mb-4 md:mb-0">
-                        <a href="#" aria-label="Facebook"
-                            class="w-10 h-10 bg-primary-foreground/10 hover:bg-primary text-primary-foreground rounded-full flex items-center justify-center transition-all duration-300">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                            </svg>
-                        </a>
-                        <a href="#" aria-label="Twitter"
-                            class="w-10 h-10 bg-primary-foreground/10 hover:bg-primary text-primary-foreground rounded-full flex items-center justify-center transition-all duration-300">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
-                            </svg>
-                        </a>
-                        <a href="#" aria-label="Instagram"
-                            class="w-10 h-10 bg-primary-foreground/10 hover:bg-primary text-primary-foreground rounded-full flex items-center justify-center transition-all duration-300">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.618 5.367 11.986 11.988 11.986 6.618 0 11.986-5.368 11.986-11.986C24.003 5.367 18.635.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.49-3.323-1.297L3.182 17.635l1.935-1.944c-.807-.875-1.297-2.026-1.297-3.323 0-2.734 2.215-4.948 4.948-4.948s4.948 2.214 4.948 4.948-2.214 4.949-4.948 4.949l-.319-.329z" />
-                            </svg>
-                        </a>
-                        <a href="#" aria-label="YouTube"
-                            class="w-10 h-10 bg-primary-foreground/10 hover:bg-primary text-primary-foreground rounded-full flex items-center justify-center transition-all duration-300">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                            </svg>
-                        </a>
-                    </div>
-
-                    <div class="text-center md:text-right">
-                        <p class="text-primary-foreground/80 text-sm">
-                            © 2024 Sri Bharat. All rights reserved.
-                        </p>
-                        <p class="text-primary-foreground/60 text-xs mt-1">
-                            Privacy Policy • Terms of Service
-                        </p>
-                    </div>
-                </div>
+            <div class="border-t border-primary-foreground/20 pt-8 mt-12 text-center">
+                <p class="text-primary-foreground/80 text-sm">
+                    © 2024 Sri Bharat. All rights reserved.
+                </p>
             </div>
         </div>
     </footer>
