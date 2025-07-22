@@ -95,19 +95,35 @@ const mapLocations = [
 ];
 
 function initializeMap() {
-  // Initialize the map
-  constituencyMap = L.map('constituency-map').setView([17.3850, 78.4867], 12);
+  try {
+    // Initialize the map
+    constituencyMap = L.map('constituency-map').setView([17.3850, 78.4867], 12);
 
-  // Add tile layer
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap contributors'
-  }).addTo(constituencyMap);
+    // Add tile layer
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(constituencyMap);
 
-  // Create markers layer
-  markersLayer = L.layerGroup().addTo(constituencyMap);
+    // Create markers layer
+    markersLayer = L.layerGroup().addTo(constituencyMap);
 
-  // Add all markers initially
-  addMarkersToMap(mapLocations);
+    // Add all markers initially
+    addMarkersToMap(mapLocations);
+  } catch (error) {
+    console.error('Error initializing map:', error);
+    // Show fallback content if map fails to load
+    const mapContainer = document.getElementById('constituency-map');
+    if (mapContainer) {
+      mapContainer.innerHTML = `
+        <div class="flex items-center justify-center h-full bg-gray-100 rounded-lg">
+          <div class="text-center">
+            <p class="text-gray-600 mb-2">Map temporarily unavailable</p>
+            <p class="text-sm text-gray-500">Please refresh the page to try again</p>
+          </div>
+        </div>
+      `;
+    }
+  }
 }
 
 function addMarkersToMap(locations) {
@@ -154,8 +170,14 @@ function getMarkerColor(type) {
 
 // Map filter functionality
 document.addEventListener("DOMContentLoaded", function () {
-  // Initialize map after DOM is loaded
-  setTimeout(initializeMap, 100);
+  // Initialize map after DOM is loaded with longer delay to ensure Leaflet is loaded
+  setTimeout(() => {
+    if (typeof L !== 'undefined') {
+      initializeMap();
+    } else {
+      console.error('Leaflet library not loaded');
+    }
+  }, 500);
 
   const mapFilters = document.querySelectorAll('.map-filter');
   
@@ -182,9 +204,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Demographics Charts
 function initializeCharts() {
-  // Literacy Chart
-  const literacyCtx = document.getElementById('literacyChart').getContext('2d');
-  new Chart(literacyCtx, {
+  try {
+    // Literacy Chart
+    const literacyCtx = document.getElementById('literacyChart');
+    if (!literacyCtx) return;
+    
+    new Chart(literacyCtx.getContext('2d'), {
     type: 'bar',
     data: {
       labels: ['15-25', '26-35', '36-45', '46-55', '56-65', '65+'],
@@ -228,9 +253,11 @@ function initializeCharts() {
     }
   });
 
-  // Economic Chart
-  const economicCtx = document.getElementById('economicChart').getContext('2d');
-  new Chart(economicCtx, {
+    // Economic Chart
+    const economicCtx = document.getElementById('economicChart');
+    if (!economicCtx) return;
+    
+    new Chart(economicCtx.getContext('2d'), {
     type: 'doughnut',
     data: {
       labels: ['Agriculture', 'Manufacturing', 'Services', 'Government', 'Others'],
@@ -268,9 +295,11 @@ function initializeCharts() {
     }
   });
 
-  // Population Chart
-  const populationCtx = document.getElementById('populationChart').getContext('2d');
-  new Chart(populationCtx, {
+    // Population Chart
+    const populationCtx = document.getElementById('populationChart');
+    if (!populationCtx) return;
+    
+    new Chart(populationCtx.getContext('2d'), {
     type: 'pie',
     data: {
       labels: ['0-18', '19-35', '36-50', '51-65', '65+'],
@@ -308,9 +337,11 @@ function initializeCharts() {
     }
   });
 
-  // Growth Chart
-  const growthCtx = document.getElementById('growthChart').getContext('2d');
-  new Chart(growthCtx, {
+    // Growth Chart
+    const growthCtx = document.getElementById('growthChart');
+    if (!growthCtx) return;
+    
+    new Chart(growthCtx.getContext('2d'), {
     type: 'line',
     data: {
       labels: ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024'],
@@ -350,6 +381,9 @@ function initializeCharts() {
       }
     }
   });
+  } catch (error) {
+    console.error('Error initializing charts:', error);
+  }
 }
 
 // Progress Gallery Data and Functionality
@@ -535,8 +569,14 @@ function initializeBeforeAfterSliders() {
 
 // Progress filter functionality
 document.addEventListener("DOMContentLoaded", function () {
-  // Initialize charts
-  setTimeout(initializeCharts, 100);
+  // Initialize charts with error handling
+  setTimeout(() => {
+    if (typeof Chart !== 'undefined') {
+      initializeCharts();
+    } else {
+      console.error('Chart.js library not loaded');
+    }
+  }, 500);
   
   // Initialize progress projects
   renderProgressProjects(progressData);
@@ -612,6 +652,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (entry.isIntersecting) {
         entry.target.style.opacity = "1";
         entry.target.style.transform = "translateY(0)";
+        entry.target.classList.add('animate-in');
       }
     });
   }, observerOptions);
@@ -622,10 +663,21 @@ document.addEventListener("DOMContentLoaded", function () {
   );
   
   animatedElements.forEach((el) => {
-    el.style.opacity = "0";
-    el.style.transform = "translateY(20px)";
-    el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-    observer.observe(el);
+    // Only apply animation styles if element is not already visible
+    if (!el.classList.contains('no-animate')) {
+      el.style.opacity = "0";
+      el.style.transform = "translateY(20px)";
+      el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+      observer.observe(el);
+      
+      // Fallback: make visible after 2 seconds if observer doesn't trigger
+      setTimeout(() => {
+        if (el.style.opacity === "0") {
+          el.style.opacity = "1";
+          el.style.transform = "translateY(0)";
+        }
+      }, 2000);
+    }
   });
 });
 

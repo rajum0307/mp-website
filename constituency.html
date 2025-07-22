@@ -158,7 +158,14 @@
 
             <!-- Map Container -->
             <div class="bg-card rounded-2xl shadow-card overflow-hidden">
-                <div id="constituency-map" class="h-96 md:h-[500px] w-full"></div>
+                <div id="constituency-map" class="h-96 md:h-[500px] w-full no-animate">
+                    <div class="loading-state">
+                        <div class="text-center">
+                            <div class="loading-spinner mx-auto mb-4"></div>
+                            <p>Loading interactive map...</p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Map Legend -->
