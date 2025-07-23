@@ -267,3 +267,132 @@ canvas {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+/* Map filter styles */
+.map-filter {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(25, 47%, 15%);
+}
+
+.map-filter:hover {
+  background-color: hsl(35, 91%, 51%, 0.1);
+}
+
+.map-filter.active {
+  background-color: hsl(35, 91%, 51%);
+  color: hsl(0, 0%, 100%);
+  box-shadow: 0 4px 12px -4px hsl(35 91% 51% / 0.3);
+}
+
+/* Progress filter styles */
+.progress-filter {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(25, 47%, 15%);
+}
+
+.progress-filter:hover {
+  background-color: hsl(35, 91%, 51%, 0.1);
+}
+
+.progress-filter.active {
+  background-color: hsl(35, 91%, 51%);
+  color: hsl(0, 0%, 100%);
+  box-shadow: 0 4px 12px -4px hsl(35 91% 51% / 0.3);
+}
+
+/* Before/After Slider Styles */
+.before-after-slider {
+  position: relative;
+  overflow: hidden;
+}
+
+.slider-handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  cursor: ew-resize;
+}
+
+.before-image,
+.after-image {
+  transition: clip-path 0.1s ease;
+}
+
+/* Progress project animations */
+.progress-project {
+  transition: all 0.3s ease;
+}
+
+.progress-project:hover {
+  transform: translateY(-4px);
+}
+
+/* Map popup styles */
+.leaflet-popup-content-wrapper {
+  border-radius: 12px;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+}
+
+.leaflet-popup-content {
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Animation classes */
+.animate-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Ensure critical content is visible */
+.no-animate {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Fix for empty sections */
+section {
+  min-height: 100px;
+}
+
+/* Ensure maps and charts have minimum dimensions */
+#constituency-map {
+  min-height: 400px;
+  width: 100%;
+}
+
+canvas {
+  min-height: 300px;
+  width: 100% !important;
+  height: 300px !important;
+}
+
+/* Progress container fixes */
+#progress-container {
+  min-height: 400px;
+}
+
+/* Loading states */
+.loading-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  color: hsl(25, 25%, 45%);
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid hsl(45, 100%, 90%);
+  border-top: 4px solid hsl(35, 91%, 51%);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
