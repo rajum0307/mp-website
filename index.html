@@ -65,24 +65,102 @@
 
                 <!-- Desktop Navigation -->
                 <nav class="hidden md:flex items-center space-x-8">
-                    <a href="#"
-                        class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium">Home</a>
-                    <a href="about.html"
-                        class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium">About</a>
-                    <a href="constituency.html"
-                        class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium">My constituency</a>
-                    <a href="#work-impact"
-                        class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium">Work & Impact</a>
-                    <a href="#news"
-                        class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium">News
-                    <a href="#media-gallery"
-                        class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium">Media gallery</a>
-                    <a href="#connect-engage"
-                        class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium">Connect & Engage</a>
-                    <a href="#events"
-                        class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium">Events</a>
-                    <a href="#contact"
-                        class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium">Contact</a>
+                    <a href="index.html" class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium">Home</a>
+                    
+                    <!-- About Dropdown -->
+                    <div class="relative group">
+                        <button class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium flex items-center">
+                            About
+                            <svg class="w-4 h-4 ml-1 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-48 bg-card rounded-lg shadow-elegant border border-border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <div class="py-2">
+                                <a href="about.html" class="block px-4 py-2 text-sm text-foreground hover:bg-secondary hover:text-primary transition-colors">Biography</a>
+                                <a href="about.html#timeline" class="block px-4 py-2 text-sm text-foreground hover:bg-secondary hover:text-primary transition-colors">Career Timeline</a>
+                                <a href="about.html#values" class="block px-4 py-2 text-sm text-foreground hover:bg-secondary hover:text-primary transition-colors">Values & Vision</a>
+                                <a href="about.html#testimonials" class="block px-4 py-2 text-sm text-foreground hover:bg-secondary hover:text-primary transition-colors">Testimonials</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Constituency Dropdown -->
+                    <div class="relative group">
+                        <button class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium flex items-center">
+                            My Constituency
+                            <svg class="w-4 h-4 ml-1 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-48 bg-card rounded-lg shadow-elegant border border-border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <div class="py-2">
+                                <a href="constituency.html" class="block px-4 py-2 text-sm text-foreground hover:bg-secondary hover:text-primary transition-colors">Overview</a>
+                                <a href="constituency.html#map" class="block px-4 py-2 text-sm text-foreground hover:bg-secondary hover:text-primary transition-colors">Interactive Map</a>
+                                <a href="constituency.html#demographics" class="block px-4 py-2 text-sm text-foreground hover:bg-secondary hover:text-primary transition-colors">Demographics</a>
+                                <a href="constituency.html#culture" class="block px-4 py-2 text-sm text-foreground hover:bg-secondary hover:text-primary transition-colors">Cultural Heritage</a>
+                                <a href="constituency.html#progress" class="block px-4 py-2 text-sm text-foreground hover:bg-secondary hover:text-primary transition-colors">Development Progress</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Work & Impact Dropdown -->
+                    <div class="relative group">
+                        <button class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium flex items-center">
+                            Work & Impact
+                            <svg class="w-4 h-4 ml-1 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-48 bg-card rounded-lg shadow-elegant border border-border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <div class="py-2">
+                                <a href="work-impact.html" class="block px-4 py-2 text-sm text-foreground hover:bg-secondary hover:text-primary transition-colors">Parliament Dashboard</a>
+                                <a href="work-impact.html#projects" class="block px-4 py-2 text-sm text-foreground hover:bg-secondary hover:text-primary transition-colors">Development Projects</a>
+                                <a href="work-impact.html#bills" class="block px-4 py-2 text-sm text-foreground hover:bg-secondary hover:text-primary transition-colors">Bills & Legislation</a>
+                                <a href="work-impact.html#achievements" class="block px-4 py-2 text-sm text-foreground hover:bg-secondary hover:text-primary transition-colors">Key Achievements</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- News & Media Dropdown -->
+                    <div class="relative group">
+                        <button class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium flex items-center">
+                            News & Media
+                            <svg class="w-4 h-4 ml-1 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-48 bg-card rounded-lg shadow-elegant border border-border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <div class="py-2">
+                                <a href="news.html" class="block px-4 py-2 text-sm text-foreground hover:bg-secondary hover:text-primary transition-colors">Latest News</a>
+                                <a href="news.html#press-releases" class="block px-4 py-2 text-sm text-foreground hover:bg-secondary hover:text-primary transition-colors">Press Releases</a>
+                                <a href="media-gallery.html" class="block px-4 py-2 text-sm text-foreground hover:bg-secondary hover:text-primary transition-colors">Photo Gallery</a>
+                                <a href="media-gallery.html#videos" class="block px-4 py-2 text-sm text-foreground hover:bg-secondary hover:text-primary transition-colors">Video Library</a>
+                                <a href="news.html#speeches" class="block px-4 py-2 text-sm text-foreground hover:bg-secondary hover:text-primary transition-colors">Speeches</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Engagement Dropdown -->
+                    <div class="relative group">
+                        <button class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium flex items-center">
+                            Engagement
+                            <svg class="w-4 h-4 ml-1 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-48 bg-card rounded-lg shadow-elegant border border-border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <div class="py-2">
+                                <a href="events.html" class="block px-4 py-2 text-sm text-foreground hover:bg-secondary hover:text-primary transition-colors">Upcoming Events</a>
+                                <a href="connect-engage.html" class="block px-4 py-2 text-sm text-foreground hover:bg-secondary hover:text-primary transition-colors">Community Forums</a>
+                                <a href="volunteer.html" class="block px-4 py-2 text-sm text-foreground hover:bg-secondary hover:text-primary transition-colors">Volunteer Program</a>
+                                <a href="connect-engage.html#feedback" class="block px-4 py-2 text-sm text-foreground hover:bg-secondary hover:text-primary transition-colors">Submit Feedback</a>
+                                <a href="connect-engage.html#polls" class="block px-4 py-2 text-sm text-foreground hover:bg-secondary hover:text-primary transition-colors">Community Polls</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="contact.html" class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium">Contact</a>
                 </nav>
 
                 <!-- Desktop Contact Button -->
@@ -109,24 +187,58 @@
             <!-- Mobile Navigation -->
             <div id="mobile-menu" class="md:hidden py-4 border-t border-border hidden">
                 <nav class="flex flex-col space-y-4">
-                    <a href="#"
-                        class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">Home</a>
-                    <a href="about.html"
-                        class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">About</a>
-                    <a href="constituency.html"
-                        class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">My constituency</a>
-                    <a href="#work-impact"
-                        class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">Work & Impact</a>
-                    <a href="#news"
-                        class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">News</a>
-                    <a href="#media-gallery"
-                        class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">Media gallery</a>
-                    <a href="#connect-engage"
-                        class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">Connect & Engage</a>
-                    <a href="#events"
-                        class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">Events</a>
-                    <a href="#contact"
-                        class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">Contact</a>
+                    <a href="index.html" class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">Home</a>
+                    
+                    <!-- Mobile About Section -->
+                    <div class="px-2 py-1">
+                        <p class="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">About</p>
+                        <div class="space-y-1 ml-2">
+                            <a href="about.html" class="block text-foreground hover:text-primary transition-colors text-sm">Biography</a>
+                            <a href="about.html#timeline" class="block text-foreground hover:text-primary transition-colors text-sm">Career Timeline</a>
+                            <a href="about.html#values" class="block text-foreground hover:text-primary transition-colors text-sm">Values & Vision</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Mobile Constituency Section -->
+                    <div class="px-2 py-1">
+                        <p class="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">My Constituency</p>
+                        <div class="space-y-1 ml-2">
+                            <a href="constituency.html" class="block text-foreground hover:text-primary transition-colors text-sm">Overview</a>
+                            <a href="constituency.html#map" class="block text-foreground hover:text-primary transition-colors text-sm">Interactive Map</a>
+                            <a href="constituency.html#demographics" class="block text-foreground hover:text-primary transition-colors text-sm">Demographics</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Mobile Work & Impact Section -->
+                    <div class="px-2 py-1">
+                        <p class="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">Work & Impact</p>
+                        <div class="space-y-1 ml-2">
+                            <a href="work-impact.html" class="block text-foreground hover:text-primary transition-colors text-sm">Parliament Dashboard</a>
+                            <a href="work-impact.html#projects" class="block text-foreground hover:text-primary transition-colors text-sm">Development Projects</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Mobile News & Media Section -->
+                    <div class="px-2 py-1">
+                        <p class="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">News & Media</p>
+                        <div class="space-y-1 ml-2">
+                            <a href="news.html" class="block text-foreground hover:text-primary transition-colors text-sm">Latest News</a>
+                            <a href="media-gallery.html" class="block text-foreground hover:text-primary transition-colors text-sm">Photo Gallery</a>
+                            <a href="media-gallery.html#videos" class="block text-foreground hover:text-primary transition-colors text-sm">Videos</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Mobile Engagement Section -->
+                    <div class="px-2 py-1">
+                        <p class="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">Engagement</p>
+                        <div class="space-y-1 ml-2">
+                            <a href="events.html" class="block text-foreground hover:text-primary transition-colors text-sm">Events</a>
+                            <a href="connect-engage.html" class="block text-foreground hover:text-primary transition-colors text-sm">Community Forums</a>
+                            <a href="volunteer.html" class="block text-foreground hover:text-primary transition-colors text-sm">Volunteer</a>
+                        </div>
+                    </div>
+                    
+                    <a href="contact.html" class="text-foreground hover:text-primary transition-colors duration-200 text-sm font-medium px-2 py-1">Contact</a>
                     <button
                         class="bg-gradient-primary hover:opacity-90 text-primary-foreground w-fit mx-2 mt-4 px-6 py-2 rounded-lg font-medium transition-opacity">
                         Contact Us
