@@ -5,21 +5,24 @@ document.addEventListener("DOMContentLoaded", function () {
   const menuIcon = document.getElementById("menu-icon");
   const closeIcon = document.getElementById("close-icon");
 
-  mobileMenuButton.addEventListener("click", function () {
-    mobileMenu.classList.toggle("hidden");
-    menuIcon.classList.toggle("hidden");
-    closeIcon.classList.toggle("hidden");
-  });
-
-  // Close mobile menu when clicking on a link
-  const mobileNavLinks = mobileMenu.querySelectorAll("a");
-  mobileNavLinks.forEach((link) => {
-    link.addEventListener("click", function () {
-      mobileMenu.classList.add("hidden");
-      menuIcon.classList.remove("hidden");
-      closeIcon.classList.add("hidden");
+  // Only add event listeners if elements exist
+  if (mobileMenuButton && mobileMenu && menuIcon && closeIcon) {
+    mobileMenuButton.addEventListener("click", function () {
+      mobileMenu.classList.toggle("hidden");
+      menuIcon.classList.toggle("hidden");
+      closeIcon.classList.toggle("hidden");
     });
-  });
+
+    // Close mobile menu when clicking on a link
+    const mobileNavLinks = mobileMenu.querySelectorAll("a");
+    mobileNavLinks.forEach((link) => {
+      link.addEventListener("click", function () {
+        mobileMenu.classList.add("hidden");
+        menuIcon.classList.remove("hidden");
+        closeIcon.classList.add("hidden");
+      });
+    });
+  }
 });
 
 // News section data and functionality
